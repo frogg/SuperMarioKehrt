@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Kehrmaschine.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+    self.kehrmaschine = [[Kehrmaschine alloc] initWithIpAddress:@"192.168.100.99" withUserName:@"root" withPassword:@"KyQETdMx8xTHAS{R"];
+    [self.kehrmaschine startMonitoringSpeed];
+    
     return YES;
 }
 
