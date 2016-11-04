@@ -1,0 +1,333 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5162D1E01DCD24D200EC08D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5162D1DF1DCD24D200EC08D5 /* main.m */; };
+		5162D1E31DCD24D200EC08D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5162D1E21DCD24D200EC08D5 /* AppDelegate.m */; };
+		5162D1E51DCD24D200EC08D5 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5162D1E41DCD24D200EC08D5 /* GameScene.sks */; };
+		5162D1E71DCD24D200EC08D5 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5162D1E61DCD24D200EC08D5 /* Actions.sks */; };
+		5162D1EA1DCD24D200EC08D5 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5162D1E91DCD24D200EC08D5 /* GameScene.m */; };
+		5162D1ED1DCD24D200EC08D5 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5162D1EC1DCD24D200EC08D5 /* GameViewController.m */; };
+		5162D1F01DCD24D300EC08D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5162D1EE1DCD24D200EC08D5 /* Main.storyboard */; };
+		5162D1F21DCD24D300EC08D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5162D1F11DCD24D300EC08D5 /* Assets.xcassets */; };
+		5162D1F51DCD24D300EC08D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5162D1F31DCD24D300EC08D5 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5162D1DB1DCD24D200EC08D5 /* KerhMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KerhMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5162D1DF1DCD24D200EC08D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5162D1E11DCD24D200EC08D5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5162D1E21DCD24D200EC08D5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5162D1E41DCD24D200EC08D5 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		5162D1E61DCD24D200EC08D5 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		5162D1E81DCD24D200EC08D5 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		5162D1E91DCD24D200EC08D5 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		5162D1EB1DCD24D200EC08D5 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		5162D1EC1DCD24D200EC08D5 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		5162D1EF1DCD24D200EC08D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5162D1F11DCD24D300EC08D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5162D1F41DCD24D300EC08D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5162D1F61DCD24D300EC08D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5162D1D81DCD24D200EC08D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5162D1D21DCD24D200EC08D5 = {
+			isa = PBXGroup;
+			children = (
+				5162D1DD1DCD24D200EC08D5 /* KerhMan */,
+				5162D1DC1DCD24D200EC08D5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5162D1DC1DCD24D200EC08D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5162D1DB1DCD24D200EC08D5 /* KerhMan.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5162D1DD1DCD24D200EC08D5 /* KerhMan */ = {
+			isa = PBXGroup;
+			children = (
+				5162D1E11DCD24D200EC08D5 /* AppDelegate.h */,
+				5162D1E21DCD24D200EC08D5 /* AppDelegate.m */,
+				5162D1E41DCD24D200EC08D5 /* GameScene.sks */,
+				5162D1E61DCD24D200EC08D5 /* Actions.sks */,
+				5162D1E81DCD24D200EC08D5 /* GameScene.h */,
+				5162D1E91DCD24D200EC08D5 /* GameScene.m */,
+				5162D1EB1DCD24D200EC08D5 /* GameViewController.h */,
+				5162D1EC1DCD24D200EC08D5 /* GameViewController.m */,
+				5162D1EE1DCD24D200EC08D5 /* Main.storyboard */,
+				5162D1F11DCD24D300EC08D5 /* Assets.xcassets */,
+				5162D1F31DCD24D300EC08D5 /* LaunchScreen.storyboard */,
+				5162D1F61DCD24D300EC08D5 /* Info.plist */,
+				5162D1DE1DCD24D200EC08D5 /* Supporting Files */,
+			);
+			path = KerhMan;
+			sourceTree = "<group>";
+		};
+		5162D1DE1DCD24D200EC08D5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5162D1DF1DCD24D200EC08D5 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5162D1DA1DCD24D200EC08D5 /* KerhMan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5162D1F91DCD24D300EC08D5 /* Build configuration list for PBXNativeTarget "KerhMan" */;
+			buildPhases = (
+				5162D1D71DCD24D200EC08D5 /* Sources */,
+				5162D1D81DCD24D200EC08D5 /* Frameworks */,
+				5162D1D91DCD24D200EC08D5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KerhMan;
+			productName = KerhMan;
+			productReference = 5162D1DB1DCD24D200EC08D5 /* KerhMan.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5162D1D31DCD24D200EC08D5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Frogg GmbH";
+				TargetAttributes = {
+					5162D1DA1DCD24D200EC08D5 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 52U6XAJSSF;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 5162D1D61DCD24D200EC08D5 /* Build configuration list for PBXProject "KerhMan" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5162D1D21DCD24D200EC08D5;
+			productRefGroup = 5162D1DC1DCD24D200EC08D5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5162D1DA1DCD24D200EC08D5 /* KerhMan */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5162D1D91DCD24D200EC08D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5162D1F01DCD24D300EC08D5 /* Main.storyboard in Resources */,
+				5162D1E51DCD24D200EC08D5 /* GameScene.sks in Resources */,
+				5162D1F21DCD24D300EC08D5 /* Assets.xcassets in Resources */,
+				5162D1F51DCD24D300EC08D5 /* LaunchScreen.storyboard in Resources */,
+				5162D1E71DCD24D200EC08D5 /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5162D1D71DCD24D200EC08D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5162D1ED1DCD24D200EC08D5 /* GameViewController.m in Sources */,
+				5162D1E31DCD24D200EC08D5 /* AppDelegate.m in Sources */,
+				5162D1EA1DCD24D200EC08D5 /* GameScene.m in Sources */,
+				5162D1E01DCD24D200EC08D5 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5162D1EE1DCD24D200EC08D5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5162D1EF1DCD24D200EC08D5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5162D1F31DCD24D300EC08D5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5162D1F41DCD24D300EC08D5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5162D1F71DCD24D300EC08D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5162D1F81DCD24D300EC08D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5162D1FA1DCD24D300EC08D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 52U6XAJSSF;
+				INFOPLIST_FILE = KerhMan/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.frogg.KerhMan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5162D1FB1DCD24D300EC08D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 52U6XAJSSF;
+				INFOPLIST_FILE = KerhMan/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.frogg.KerhMan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5162D1D61DCD24D200EC08D5 /* Build configuration list for PBXProject "KerhMan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5162D1F71DCD24D300EC08D5 /* Debug */,
+				5162D1F81DCD24D300EC08D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5162D1F91DCD24D300EC08D5 /* Build configuration list for PBXNativeTarget "KerhMan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5162D1FA1DCD24D300EC08D5 /* Debug */,
+				5162D1FB1DCD24D300EC08D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5162D1D31DCD24D200EC08D5 /* Project object */;
+}
