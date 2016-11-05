@@ -47,7 +47,7 @@
         [backgroundTrees runAction:moveTrees];
     }
     
-    SKAction* moveTrees = [SKAction moveByX:-100 y:0 duration:0.5];
+    SKAction* moveTrees = [SKAction moveByX:gameSpeed * animationLength * 2 * -100 y:0 duration:animationLength];
     [backgroundTrees runAction:moveTrees];
     
     
@@ -57,7 +57,7 @@
         [backgroundHills runAction:moveHills];
     }
     
-    SKAction* moveHills = [SKAction moveByX:-50 y:0 duration:0.5];
+    SKAction* moveHills = [SKAction moveByX:gameSpeed * animationLength * 2 * -50 y:0 duration:animationLength];
     [backgroundHills runAction:moveHills];
     
     
@@ -72,7 +72,7 @@
         [backgroundTrees runAction:moveHills];
     }
     
-    SKAction* move = [SKAction moveByX:100 y:0 duration:0.5];
+    SKAction* move = [SKAction moveByX:gameSpeed * animationLength * 2 * 100 y:0 duration:animationLength];
     [backgroundTrees runAction:move];
     
     
@@ -81,7 +81,7 @@
         [backgroundHills runAction:moveHills];
     }
     
-    SKAction* moveHills = [SKAction moveByX:50 y:0 duration:0.5];
+    SKAction* moveHills = [SKAction moveByX: gameSpeed * animationLength * 2 * 50 y:0 duration:animationLength];
     [backgroundHills runAction:moveHills];
 }
 

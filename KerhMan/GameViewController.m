@@ -37,7 +37,7 @@
     
     
     
-    [NSTimer scheduledTimerWithTimeInterval:0.5f repeats:YES block:^(NSTimer * _Nonnull timer) {
+    [NSTimer scheduledTimerWithTimeInterval:animationLength repeats:YES block:^(NSTimer * _Nonnull timer) {
         if(self.drivingDirection == DrivingDirectionRight) {
             self.gameCharacter.image = [UIImage imageNamed:@"mario_right"];
             [gameScene moveRight];

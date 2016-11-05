@@ -24,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		514CEB371DCE56CE00080A2D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		5162D1DB1DCD24D200EC08D5 /* KerhMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KerhMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5162D1DF1DCD24D200EC08D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5162D1E11DCD24D200EC08D5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -66,6 +67,7 @@
 		5162D1D21DCD24D200EC08D5 = {
 			isa = PBXGroup;
 			children = (
+				514CEB371DCE56CE00080A2D /* PrefixHeader.pch */,
 				5162D1DD1DCD24D200EC08D5 /* KerhMan */,
 				5162D1DC1DCD24D200EC08D5 /* Products */,
 				7F65F7BE1DCD3993000F96D8 /* Frameworks */,
@@ -352,6 +354,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
 				INFOPLIST_FILE = KerhMan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -378,6 +381,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
 				INFOPLIST_FILE = KerhMan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (

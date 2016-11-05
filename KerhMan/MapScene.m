@@ -8,7 +8,7 @@
 
 #import "MapScene.h"
 #define MCP_DEGREES_TO_RADIANS(angle) ((angle) / 180.0 * M_PI)
-#define gameSpeed 2
+
 @implementation MapScene
 
 -(instancetype) init {
@@ -16,9 +16,7 @@
     
     if(self) {
     
-        
-        
-        
+
         // Create a camera
         SCNCamera *camera = [SCNCamera camera];
         camera.xFov = 45;   // Degrees, not radians
@@ -51,12 +49,12 @@
 }
 
 -(void) moveLeft {
-    SCNAction* move = [SCNAction rotateByAngle:gameSpeed*0.25f aroundAxis:SCNVector3Make(0, 1, 0) duration:0.5];
+    SCNAction* move = [SCNAction rotateByAngle:animationLength*2*gameSpeed*0.25f aroundAxis:SCNVector3Make(0, 1, 0) duration:0.5];
     [self.cameraNode runAction:move];
 }
 
 -(void) moveRight {
-    SCNAction* move = [SCNAction rotateByAngle:gameSpeed*-0.25f aroundAxis:SCNVector3Make(0, 1, 0) duration:0.5];
+    SCNAction* move = [SCNAction rotateByAngle:animationLength*2*gameSpeed*-0.25f aroundAxis:SCNVector3Make(0, 1, 0) duration:0.5];
     [self.cameraNode runAction:move];
 }
 
@@ -68,8 +66,8 @@
     
     NSLog(@"Camera Winkel: %f",yangle);
     
-    double yMovement = -cos(yangle) * gameSpeed;
-    double xMovement = -sin(yangle) * gameSpeed;
+    double yMovement = -cos(yangle) * gameSpeed * animationLength*2;
+    double xMovement = -sin(yangle) * gameSpeed * animationLength*2;
     
     NSLog(@"Movement: %f, %f",xMovement,yMovement);
     
