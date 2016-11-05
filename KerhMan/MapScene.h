@@ -14,7 +14,7 @@
 }
 
 @property SCNNode* cameraNode;
--(void) moveForward;
+-(void) moveForwardWithSpeed:(double) speed;
 -(void) moveRight;
 -(void) moveLeft;
 

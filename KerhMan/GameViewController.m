@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.vehicleSpeed = 1;
     
 }
 
@@ -60,15 +61,15 @@
             self.gameCharacter.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@_right",self.driverName]];
             [gameScene moveRight];
             [self.mapScene moveRight];
-            [self.mapScene moveForward];
+            [self.mapScene moveForwardWithSpeed:self.vehicleSpeed / 1.5];
         } else if(self.drivingDirection == DrivingDirectionLeft) {
             self.gameCharacter.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@_left",self.driverName]];
             [gameScene moveLeft];
             [self.mapScene moveLeft];
-            [self.mapScene moveForward];
+            [self.mapScene moveForwardWithSpeed: self.vehicleSpeed / 1.5];
         } else if(self.drivingDirection == DrivingDirectionForward) {
             self.gameCharacter.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@_back",self.driverName]];
-            [self.mapScene moveForward];
+            [self.mapScene moveForwardWithSpeed:self.vehicleSpeed];
         }
     }];
     

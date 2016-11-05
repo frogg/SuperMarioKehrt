@@ -25,6 +25,8 @@ typedef enum {
 @property (strong, nonatomic) IBOutlet UIImageView *gameCharacter;
 @property MapScene* mapScene;
 @property DrivingDirection drivingDirection;
+@property double vehicleSteeringDirection;
+@property double vehicleSpeed;
 @property NSString* driverName;
 
 @end

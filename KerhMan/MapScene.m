@@ -49,24 +49,24 @@
 }
 
 -(void) moveLeft {
-    SCNAction* move = [SCNAction rotateByAngle:animationLength*2*gameSpeed*0.25f aroundAxis:SCNVector3Make(0, 1, 0) duration:0.5];
+    SCNAction* move = [SCNAction rotateByAngle:animationLength*2*gameSpeed*0.25f aroundAxis:SCNVector3Make(0, 1, 0) duration:animationLength];
     [self.cameraNode runAction:move];
 }
 
 -(void) moveRight {
-    SCNAction* move = [SCNAction rotateByAngle:animationLength*2*gameSpeed*-0.25f aroundAxis:SCNVector3Make(0, 1, 0) duration:0.5];
+    SCNAction* move = [SCNAction rotateByAngle:animationLength*2*gameSpeed*-0.25f aroundAxis:SCNVector3Make(0, 1, 0) duration:animationLength];
     [self.cameraNode runAction:move];
 }
 
--(void) moveForward {
+-(void) moveForwardWithSpeed:(double) speed {
     
     
     
     double yangle = self.cameraNode.rotation.y * self.cameraNode.rotation.w;
     
     
-    double yMovement = -cos(yangle) * gameSpeed * animationLength*2;
-    double xMovement = -sin(yangle) * gameSpeed * animationLength*2;
+    double yMovement = -cos(yangle) * gameSpeed * animationLength*2 *speed;
+    double xMovement = -sin(yangle) * gameSpeed * animationLength*2 *speed;
     
     
     SCNAction* move = [SCNAction moveByX:xMovement y:0 z:yMovement duration:0.5];
