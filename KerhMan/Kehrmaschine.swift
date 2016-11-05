@@ -17,20 +17,22 @@ import NMSSH
 @objc public class Kehrmaschine: NSObject {
     
     enum Command: String {
-        case simStatus = "tcu.networkmanager.simstate"
-        case pairingStatus = "tcu.id.pairing.status"
         case position = "tcu.lastpos2"
+        case steeringWheel = "ksip.kopf.measurement.39"
+        case speed = "ksip.kopf.measurement.7"
+        case direction = "ksip.kopf.sensor.3"
+        
     }
     
-    let queue: DispatchQueue = DispatchQueue(label: "kehrman.ssh")
+    let queue: DispatchQueue = DispatchQueue(label: "com.mariokehrt.ssh")
     private var delegates: [CommandDelegate] = []
     public init(host: String, user: String, password: String) {
         super.init()
         self.queue.async {
             self.delegates += [
-                try! CommandDelegate(host: host, user: user, password: password, command: .position, callback: self.delegateCallback),
-                try! CommandDelegate(host: host, user: user, password: password, command: .simStatus, callback: self.delegateCallback),
-                try! CommandDelegate(host: host, user: user, password: password, command: .pairingStatus, callback: self.delegateCallback)
+                //                try! CommandDelegate(host: host, user: user, password: password, command: .steeringWheel, callback: self.delegateCallback),
+                try! CommandDelegate(host: host, user: user, password: password, commands: [.speed, .steeringWheel], callback: self.delegateCallback),
+                //                try! CommandDelegate(host: host, user: user, password: password, command: .direction, callback: self.delegateCallback)
             ]
             
         }
@@ -41,39 +43,62 @@ import NMSSH
     //ksip.kopf.ophr
     //ksip.kopf.measurement.41 >> battery charge level
     //ksip.kopf.machineoperable
-    //KyQETdMx8xTHAS{R >> charing cycles
+    //ksip.kopf.measurement.42 >> charing cycles
     //ksip.kopf.parameter.45877 >> battery id
-    
+    private var commandsStats: [Command : Int] = [:]
     private func delegateCallback(command: Command, result: String) -> Bool {
         DispatchQueue.main.async {
-            print("Command \(command) with result: \(result)")
+            if !result.contains("error") {
+                print("Command \(command) with result: \(result)")
+                self.commandsStats[command] = (self.commandsStats[command] ?? 0) + 1
+            } else {
+                self.commandsStats[command] = (self.commandsStats[command] ?? 0) - 1
+            }
+            
+            for (command, state) in self.commandsStats {
+                print("state \(command) = \(state)")
+            }
         }
         return true
     }
-   
+    
     
     private class CommandDelegate: NSObject, NMSSHChannelDelegate {
         private static let regex = try! NSRegularExpression(pattern: "tcuclient\\s\\-c\\s\\'var\\sread\\s.+\\'\\s*([^@#]+?)\\s*root@kaercher_tcu\\s~\\s#", options: [])
         let session: NMSSHSession
-        let command: Command
+        let commands: [Command]
         let callback: (Command, String) -> Bool
-        let queue: DispatchQueue = DispatchQueue(label: "kehrman.ssh")
-
         
-        init(host: String, user: String, password: String, command: Command, callback: @escaping (Command, String) -> Bool) throws {
+        
+        init(host: String, user: String, password: String, commands: [Command], callback: @escaping (Command, String) -> Bool) throws {
             self.session = NMSSHSession.connect(toHost: host, withUsername: user)
-            self.session.authenticate(byPassword: password)
-            self.command = command
+            if self.session.connect() {
+                print("Could connect to server")
+                self.session.authenticate(byPassword: password)
+            }
+            self.commands = commands
             self.callback = callback
             super.init()
+            if self.session.connect() && !self.session.isAuthorized {
+                self.session.authenticate(byPassword: password)
+            }
+            guard self.session.isAuthorized else {
+                print("fuck this, wronge password")
+                return
+            }
             self.session.channel.delegate = self
             self.session.channel.requestPty = true
             try self.session.channel.startShell()
             try! self.sendCommand()
         }
         
+        private var nextCommandIndex = 0
         private func sendCommand() throws {
-            try self.session.channel.write("tcuclient -c 'var read \(self.command.rawValue)'\n")
+            if self.commands.count <= self.nextCommandIndex {
+                self.nextCommandIndex = 0
+            }
+            try self.session.channel.write("tcuclient -c 'var read \(self.commands[self.nextCommandIndex].rawValue)'\n")
+            self.nextCommandIndex += 1
         }
         
         
@@ -82,7 +107,7 @@ import NMSSH
                 let string = self.output.replacingOccurrences(of: "\r", with: " ").replacingOccurrences(of: "\n", with: " ")
                 if let match = CommandDelegate.regex.firstMatch(in: string, options: [], range: NSMakeRange(0, (string as NSString).length)), match.numberOfRanges == 2 {
                     let result = (string as NSString).substring(with: match.rangeAt(1))
-                    if !result.replacingOccurrences(of: " ", with: "").isEmpty && self.callback(self.command, result) {
+                    if !result.replacingOccurrences(of: " ", with: "").isEmpty && self.callback(self.commands[self.nextCommandIndex - 1], result) {
                         print("Result: \(result)")
                         self.output = ""
                         try! self.sendCommand()
