@@ -40,7 +40,9 @@
         [tcpSockets addObject:newSocket];
         newSocket.delegate = self;
         NSLog(@"New Socket Connection");
+        
         [newSocket readDataWithTimeout:10 tag:1];
+        
     }
 }
 
@@ -48,9 +50,34 @@
 -(void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag {
     //received TCP message
     NSString* receivedString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"%@",receivedString);
+    
+    NSArray* components = [receivedString componentsSeparatedByString:@";"];
+    
+    if([components count] == 4) {
+        
+        double x_val = [[components objectAtIndex:0] intValue];
+        double y_val = [[components objectAtIndex:1] intValue];
+        double z_val = [[components objectAtIndex:2] intValue];
+        double dist = [[components objectAtIndex:3] intValue];
+        
+        NSLog(@"Received Values: x: %f, y: %f, z: %f, dist: %f",x_val, y_val, z_val, dist);
+        
+    } else {
+        NSLog(@"Fehlerhafter Datensatz: %@", receivedString);
+    }
+    
+    [sock writeData:[@"FAMOS" dataUsingEncoding:NSUTF8StringEncoding] withTimeout:10 tag:1];
+    
+    
 }
 
+-(void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err {
+    NSLog(@"Disconnected: %@",err.description);
+}
+
+-(void)socketDidCloseReadStream:(GCDAsyncSocket *)sock {
+    NSLog(@"socketDidCloseReadStream");
+}
 
 
 @end

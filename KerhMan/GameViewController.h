@@ -28,6 +28,7 @@ typedef enum {
 @property double vehicleSpeed;
 @property NSString* driverName;
 @property DrivingDirection lastDrivingDirection;
+@property (strong, nonatomic) IBOutlet UIImageView *ampelmaennchen;
 
 
 @end

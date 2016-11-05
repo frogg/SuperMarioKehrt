@@ -19,9 +19,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.vehicleSpeed = 1;
+    self.vehicleSpeed = 0;
     
+    AMGSoundManager* soundManager = [AMGSoundManager sharedManager];
+    [soundManager playAudio:[[NSBundle mainBundle] pathForResource:@"driving-theme" ofType:@"mp3"] withName:@"driving-theme" inLine:@"music" withVolume:1 andRepeatCount:0 fadeDuration:0 withCompletitionHandler:nil];
+    
+    self.ampelmaennchen.layer.magnificationFilter = kCAFilterNearest;
+    [self startAmpelmaennchen];
 }
+
+-(void) startAmpelmaennchen {
+    [NSTimer scheduledTimerWithTimeInterval:1 repeats:NO block:^(NSTimer * _Nonnull timer) {
+        self.ampelmaennchen.image = [UIImage imageNamed:@"ampel_1"];
+        [NSTimer scheduledTimerWithTimeInterval:1 repeats:NO block:^(NSTimer * _Nonnull timer) {
+            self.ampelmaennchen.image = [UIImage imageNamed:@"ampel_2"];
+            [NSTimer scheduledTimerWithTimeInterval:1 repeats:NO block:^(NSTimer * _Nonnull timer) {
+                self.ampelmaennchen.image = [UIImage imageNamed:@"ampel_3"];
+                
+                [UIView animateWithDuration:1 animations:^{
+                    self.ampelmaennchen.alpha = 0;
+                }];
+                
+                self.vehicleSpeed = 1;
+            }];
+        }];
+    }];
+}
+
 
 -(void)viewWillAppear:(BOOL)animated {
     
