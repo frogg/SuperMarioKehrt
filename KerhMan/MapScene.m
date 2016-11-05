@@ -64,12 +64,10 @@
     
     double yangle = self.cameraNode.rotation.y * self.cameraNode.rotation.w;
     
-    NSLog(@"Camera Winkel: %f",yangle);
     
     double yMovement = -cos(yangle) * gameSpeed * animationLength*2;
     double xMovement = -sin(yangle) * gameSpeed * animationLength*2;
     
-    NSLog(@"Movement: %f, %f",xMovement,yMovement);
     
     SCNAction* move = [SCNAction moveByX:xMovement y:0 z:yMovement duration:0.5];
     [self.cameraNode runAction:move];

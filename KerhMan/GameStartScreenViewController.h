@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GameViewController.h"
 
 @interface GameStartScreenViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIButton *selectLuigi;

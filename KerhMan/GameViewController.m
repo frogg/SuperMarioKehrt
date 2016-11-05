@@ -14,6 +14,9 @@
 #import "AMGAudioPlayer.h"
 @implementation GameViewController
 
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -54,29 +57,22 @@
     
     [NSTimer scheduledTimerWithTimeInterval:animationLength repeats:YES block:^(NSTimer * _Nonnull timer) {
         if(self.drivingDirection == DrivingDirectionRight) {
-            self.gameCharacter.image = [UIImage imageNamed:@"mario_right"];
+            self.gameCharacter.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@_right",self.driverName]];
             [gameScene moveRight];
             [self.mapScene moveRight];
             [self.mapScene moveForward];
         } else if(self.drivingDirection == DrivingDirectionLeft) {
-            self.gameCharacter.image = [UIImage imageNamed:@"mario_left"];
+            self.gameCharacter.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@_left",self.driverName]];
             [gameScene moveLeft];
             [self.mapScene moveLeft];
             [self.mapScene moveForward];
         } else if(self.drivingDirection == DrivingDirectionForward) {
-            self.gameCharacter.image = [UIImage imageNamed:@"mario_back"];
+            self.gameCharacter.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@_back",self.driverName]];
             [self.mapScene moveForward];
         }
     }];
     
-    
-    
-    
-    [NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
-        
-        NSLog(@"Camera: %f, %f, %f, %f",self.mapScene.cameraNode.rotation.x,self.mapScene.cameraNode.rotation.y,self.mapScene.cameraNode.rotation.z,self.mapScene.cameraNode.rotation.w);
-    }];
-    
+
     
 }
 

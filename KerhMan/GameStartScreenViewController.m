@@ -37,12 +37,21 @@
     return YES;
 }
 - (IBAction)selectedLuigi:(id)sender {
+    GameViewController* gvc = [self.storyboard instantiateViewControllerWithIdentifier:@"GameViewController"];
+    gvc.driverName = @"luigi";
+    [self showViewController:gvc sender:self];
 }
 
 - (IBAction)selectedMario:(id)sender {
+    GameViewController* gvc = [self.storyboard instantiateViewControllerWithIdentifier:@"GameViewController"];
+    gvc.driverName = @"mario";
+    [self showViewController:gvc sender:self];
 }
 
 - (IBAction)selectedPeach:(id)sender {
+    GameViewController* gvc = [self.storyboard instantiateViewControllerWithIdentifier:@"GameViewController"];
+    gvc.driverName = @"peach";
+    [self showViewController:gvc sender:self];
 }
 
 /*

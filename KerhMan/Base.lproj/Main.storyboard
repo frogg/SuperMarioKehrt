@@ -41,7 +41,6 @@
                                                         <state key="normal" backgroundImage="select_luigi"/>
                                                         <connections>
                                                             <action selector="selectedLuigi:" destination="JVj-cm-ORp" eventType="touchUpInside" id="m5h-f5-rpq"/>
-                                                            <segue destination="BV1-FR-VrT" kind="show" id="Tk9-O5-KYc"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luigi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcA-SK-Cqr">
@@ -63,7 +62,6 @@
                                                         <state key="normal" backgroundImage="select_mario"/>
                                                         <connections>
                                                             <action selector="selectedMario:" destination="JVj-cm-ORp" eventType="touchUpInside" id="caK-6O-Yv9"/>
-                                                            <segue destination="BV1-FR-VrT" kind="show" id="2bp-f2-W00"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mario" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oi0-oh-xg2">
@@ -85,7 +83,6 @@
                                                         <state key="normal" backgroundImage="select_peach"/>
                                                         <connections>
                                                             <action selector="selectedPeach:" destination="JVj-cm-ORp" eventType="touchUpInside" id="Ka3-uP-Reg"/>
-                                                            <segue destination="BV1-FR-VrT" kind="show" id="dEH-AL-3wH"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peach" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xvv-Jq-vMU">
@@ -139,7 +136,7 @@
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameViewController" id="BV1-FR-VrT" customClass="GameViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8aa-yV-Osq"/>
                         <viewControllerLayoutGuide type="bottom" id="qHh-Mt-9TT"/>
@@ -227,7 +224,4 @@
         <image name="select_mario" width="48" height="48"/>
         <image name="select_peach" width="48" height="48"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="dEH-AL-3wH"/>
-    </inferredMetricsTieBreakers>
 </document>
