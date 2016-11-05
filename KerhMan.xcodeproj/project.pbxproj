@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		5162D1E01DCD24D200EC08D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5162D1DF1DCD24D200EC08D5 /* main.m */; };
 		5162D1E31DCD24D200EC08D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5162D1E21DCD24D200EC08D5 /* AppDelegate.m */; };
-		5162D1E51DCD24D200EC08D5 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5162D1E41DCD24D200EC08D5 /* GameScene.sks */; };
-		5162D1E71DCD24D200EC08D5 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5162D1E61DCD24D200EC08D5 /* Actions.sks */; };
-		5162D1EA1DCD24D200EC08D5 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5162D1E91DCD24D200EC08D5 /* GameScene.m */; };
 		5162D1ED1DCD24D200EC08D5 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5162D1EC1DCD24D200EC08D5 /* GameViewController.m */; };
 		5162D1F01DCD24D300EC08D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5162D1EE1DCD24D200EC08D5 /* Main.storyboard */; };
 		5162D1F21DCD24D300EC08D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5162D1F11DCD24D300EC08D5 /* Assets.xcassets */; };
@@ -21,6 +18,12 @@
 		517677B91DCD557F00FB9E5D /* libssh2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 517677B81DCD557F00FB9E5D /* libssh2.a */; };
 		517677BD1DCD5C4100FB9E5D /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 517677BC1DCD5C4100FB9E5D /* libssl.a */; };
 		517677BF1DCD5CEE00FB9E5D /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 517677BE1DCD5CEE00FB9E5D /* libcrypto.a */; };
+		517678121DCDDDED00FB9E5D /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 517678111DCDDDED00FB9E5D /* GameScene.m */; };
+		517678151DCDEC9200FB9E5D /* GameStartScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 517678141DCDEC9200FB9E5D /* GameStartScreenViewController.m */; };
+		517678181DCDFD8500FB9E5D /* MapScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 517678171DCDFD8500FB9E5D /* MapScene.m */; };
+		5176781D1DCE133200FB9E5D /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 5176781A1DCE133200FB9E5D /* GCDAsyncSocket.m */; };
+		5176781E1DCE133200FB9E5D /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 5176781C1DCE133200FB9E5D /* GCDAsyncUdpSocket.m */; };
+		517678211DCE134400FB9E5D /* TCPSocketListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 517678201DCE134400FB9E5D /* TCPSocketListener.m */; };
 		7F65F7C01DCD3993000F96D8 /* NMSSH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F65F7BF1DCD3993000F96D8 /* NMSSH.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,10 +32,6 @@
 		5162D1DF1DCD24D200EC08D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5162D1E11DCD24D200EC08D5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5162D1E21DCD24D200EC08D5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5162D1E41DCD24D200EC08D5 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		5162D1E61DCD24D200EC08D5 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		5162D1E81DCD24D200EC08D5 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
-		5162D1E91DCD24D200EC08D5 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		5162D1EB1DCD24D200EC08D5 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		5162D1EC1DCD24D200EC08D5 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		5162D1EF1DCD24D200EC08D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -124,6 +123,18 @@
 		5176780D1DCD5DD700FB9E5D /* x509.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509.h; sourceTree = "<group>"; };
 		5176780E1DCD5DD700FB9E5D /* x509_vfy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509_vfy.h; sourceTree = "<group>"; };
 		5176780F1DCD5DD700FB9E5D /* x509v3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509v3.h; sourceTree = "<group>"; };
+		517678101DCDDDED00FB9E5D /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = ../GameScene.h; sourceTree = "<group>"; };
+		517678111DCDDDED00FB9E5D /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameScene.m; path = ../GameScene.m; sourceTree = "<group>"; };
+		517678131DCDEC9200FB9E5D /* GameStartScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStartScreenViewController.h; sourceTree = "<group>"; };
+		517678141DCDEC9200FB9E5D /* GameStartScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameStartScreenViewController.m; sourceTree = "<group>"; };
+		517678161DCDFD8500FB9E5D /* MapScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapScene.h; sourceTree = "<group>"; };
+		517678171DCDFD8500FB9E5D /* MapScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapScene.m; sourceTree = "<group>"; };
+		517678191DCE133200FB9E5D /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		5176781A1DCE133200FB9E5D /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		5176781B1DCE133200FB9E5D /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		5176781C1DCE133200FB9E5D /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		5176781F1DCE134400FB9E5D /* TCPSocketListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCPSocketListener.h; sourceTree = "<group>"; };
+		517678201DCE134400FB9E5D /* TCPSocketListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCPSocketListener.m; sourceTree = "<group>"; };
 		7F65F7BF1DCD3993000F96D8 /* NMSSH.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NMSSH.framework; path = Carthage/Build/iOS/NMSSH.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,23 +173,31 @@
 		5162D1DD1DCD24D200EC08D5 /* KerhMan */ = {
 			isa = PBXGroup;
 			children = (
+				5162D1E11DCD24D200EC08D5 /* AppDelegate.h */,
+				5162D1E21DCD24D200EC08D5 /* AppDelegate.m */,
+				517678191DCE133200FB9E5D /* GCDAsyncSocket.h */,
+				5176781A1DCE133200FB9E5D /* GCDAsyncSocket.m */,
+				5176781B1DCE133200FB9E5D /* GCDAsyncUdpSocket.h */,
+				5176781C1DCE133200FB9E5D /* GCDAsyncUdpSocket.m */,
 				517677C01DCD5DD700FB9E5D /* libssh2 */,
 				517677C41DCD5DD700FB9E5D /* openssl */,
 				517677B81DCD557F00FB9E5D /* libssh2.a */,
 				517677BC1DCD5C4100FB9E5D /* libssl.a */,
 				517677BE1DCD5CEE00FB9E5D /* libcrypto.a */,
+				5176781F1DCE134400FB9E5D /* TCPSocketListener.h */,
+				517678201DCE134400FB9E5D /* TCPSocketListener.m */,
 				517677401DCD50DB00FB9E5D /* SSHWrapper.h */,
 				517677411DCD50DB00FB9E5D /* SSHWrapper.m */,
-				5162D1E11DCD24D200EC08D5 /* AppDelegate.h */,
-				5162D1E21DCD24D200EC08D5 /* AppDelegate.m */,
 				517677211DCD299C00FB9E5D /* Kehrmaschine.h */,
 				517677221DCD299C00FB9E5D /* Kehrmaschine.m */,
-				5162D1E41DCD24D200EC08D5 /* GameScene.sks */,
-				5162D1E61DCD24D200EC08D5 /* Actions.sks */,
-				5162D1E81DCD24D200EC08D5 /* GameScene.h */,
-				5162D1E91DCD24D200EC08D5 /* GameScene.m */,
+				517678131DCDEC9200FB9E5D /* GameStartScreenViewController.h */,
+				517678141DCDEC9200FB9E5D /* GameStartScreenViewController.m */,
 				5162D1EB1DCD24D200EC08D5 /* GameViewController.h */,
 				5162D1EC1DCD24D200EC08D5 /* GameViewController.m */,
+				517678101DCDDDED00FB9E5D /* GameScene.h */,
+				517678111DCDDDED00FB9E5D /* GameScene.m */,
+				517678161DCDFD8500FB9E5D /* MapScene.h */,
+				517678171DCDFD8500FB9E5D /* MapScene.m */,
 				5162D1EE1DCD24D200EC08D5 /* Main.storyboard */,
 				5162D1F11DCD24D300EC08D5 /* Assets.xcassets */,
 				5162D1F31DCD24D300EC08D5 /* LaunchScreen.storyboard */,
@@ -357,10 +376,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5162D1F01DCD24D300EC08D5 /* Main.storyboard in Resources */,
-				5162D1E51DCD24D200EC08D5 /* GameScene.sks in Resources */,
 				5162D1F21DCD24D300EC08D5 /* Assets.xcassets in Resources */,
 				5162D1F51DCD24D300EC08D5 /* LaunchScreen.storyboard in Resources */,
-				5162D1E71DCD24D200EC08D5 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,11 +406,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				5162D1ED1DCD24D200EC08D5 /* GameViewController.m in Sources */,
+				517678181DCDFD8500FB9E5D /* MapScene.m in Sources */,
 				517677231DCD299C00FB9E5D /* Kehrmaschine.m in Sources */,
 				517677421DCD50DB00FB9E5D /* SSHWrapper.m in Sources */,
 				5162D1E31DCD24D200EC08D5 /* AppDelegate.m in Sources */,
-				5162D1EA1DCD24D200EC08D5 /* GameScene.m in Sources */,
+				517678211DCE134400FB9E5D /* TCPSocketListener.m in Sources */,
+				517678121DCDDDED00FB9E5D /* GameScene.m in Sources */,
+				5176781E1DCE133200FB9E5D /* GCDAsyncUdpSocket.m in Sources */,
+				5176781D1DCE133200FB9E5D /* GCDAsyncSocket.m in Sources */,
 				5162D1E01DCD24D200EC08D5 /* main.m in Sources */,
+				517678151DCDEC9200FB9E5D /* GameStartScreenViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

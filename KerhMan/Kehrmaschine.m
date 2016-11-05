@@ -20,8 +20,9 @@
        
         self.sshWrapper = [[SSHWrapper alloc] init];
         NSError *error = nil;
-        [self.sshWrapper connectToHost:@"127.0.0.1" port:22 user:@"frederikriedel" password:@"PASSWORT" error:&error];
-        NSLog(@"%@",error.description);
+        [self.sshWrapper connectToHost:@"192.168.100.99" port:22 user:@"root" password:@"KyQETdMx8xTHAS{R" error:&error];
+        
+        NSLog(@"Error: %@",error.description);
         
         
         //tcuclient -c \"var read ksip.
@@ -43,7 +44,7 @@
         NSError *error = nil;
         
         
-        NSLog(@"%@",[self.sshWrapper executeCommand:@"ls" error:&error]);
+        NSLog(@"%@",[self.sshWrapper executeCommand:@"tcuclient -c 'var read tcu.networkmanager.simstate'\n" error:&error]);
         
         NSLog(@"%@",error.description);
         //NSString *response = [self.session.channel execute:@"tcuclient -c \"var read tcu.networkmanager.simstate\"" error:&error];

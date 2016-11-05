@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "Kehrmaschine.h"
+#import "TCPSocketListener.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property Kehrmaschine* kehrmaschine;
+@property TCPSocketListener* socketListener;
 
 @end
 

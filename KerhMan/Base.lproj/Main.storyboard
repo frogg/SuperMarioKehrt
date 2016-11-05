@@ -1,26 +1,179 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Game Start Screen View Controller-->
+        <scene sceneID="NfM-f6-GVX">
+            <objects>
+                <viewController id="JVj-cm-ORp" customClass="GameStartScreenViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vyD-P2-G3N"/>
+                        <viewControllerLayoutGuide type="bottom" id="21P-Ub-6HC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bwj-H9-2H2">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="crv-6x-nQk">
+                                <rect key="frame" x="-990" y="138.5" width="3004" height="491"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Super Mario Kehrt" translatesAutoresizingMaskIntoConstraints="NO" id="AMc-yt-uy6">
+                                        <rect key="frame" x="0.0" y="0.0" width="3004" height="300"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="Xpg-KK-p6n"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Okg-re-1oh">
+                                        <rect key="frame" x="1277" y="317" width="450" height="174"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wg6-Uh-B48">
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="174"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMf-KU-Lb8">
+                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="151"/>
+                                                        <state key="normal" backgroundImage="select_luigi"/>
+                                                        <connections>
+                                                            <segue destination="BV1-FR-VrT" kind="show" id="Tk9-O5-KYc"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luigi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcA-SK-Cqr">
+                                                        <rect key="frame" x="0.0" y="151" width="150" height="23"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="23" id="rLj-gE-BBT"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CAp-QQ-7cf">
+                                                <rect key="frame" x="150" y="0.0" width="150" height="174"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eB6-QR-xQ2">
+                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="151"/>
+                                                        <state key="normal" backgroundImage="select_mario"/>
+                                                        <connections>
+                                                            <segue destination="BV1-FR-VrT" kind="show" id="2bp-f2-W00"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mario" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oi0-oh-xg2">
+                                                        <rect key="frame" x="0.0" y="151" width="150" height="23"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="23" id="n8c-f0-vYW"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6oP-Kh-7gx">
+                                                <rect key="frame" x="300" y="0.0" width="150" height="174"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnF-Kb-BMC">
+                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="151"/>
+                                                        <state key="normal" backgroundImage="select_peach"/>
+                                                        <connections>
+                                                            <segue destination="BV1-FR-VrT" kind="show" id="dEH-AL-3wH"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peach" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xvv-Jq-vMU">
+                                                        <rect key="frame" x="0.0" y="151" width="150" height="23"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="23" id="s6M-Lv-CWj"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="CAp-QQ-7cf" firstAttribute="centerX" secondItem="Okg-re-1oh" secondAttribute="centerX" id="6RH-5c-LKY"/>
+                                            <constraint firstItem="CAp-QQ-7cf" firstAttribute="leading" secondItem="Okg-re-1oh" secondAttribute="leading" constant="150" id="hKg-LZ-vKd"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Okg-re-1oh" firstAttribute="leading" secondItem="crv-6x-nQk" secondAttribute="leading" constant="1277" id="Xdn-0Q-2X2"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Character To Start Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xiN-aR-RsM">
+                                <rect key="frame" x="391" y="727.5" width="243" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.15684100985527039" green="0.15687525272369385" blue="0.15683883428573608" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="xiN-aR-RsM" secondAttribute="bottom" constant="20" symbolic="YES" id="2f5-yC-5Z4"/>
+                            <constraint firstItem="crv-6x-nQk" firstAttribute="centerX" secondItem="Bwj-H9-2H2" secondAttribute="centerX" id="7TZ-pX-Mrx"/>
+                            <constraint firstItem="xiN-aR-RsM" firstAttribute="top" secondItem="crv-6x-nQk" secondAttribute="bottom" constant="98" id="PKu-pT-d1J"/>
+                            <constraint firstItem="crv-6x-nQk" firstAttribute="centerX" secondItem="xiN-aR-RsM" secondAttribute="centerX" id="Vr0-kk-6F6"/>
+                            <constraint firstItem="crv-6x-nQk" firstAttribute="centerY" secondItem="Bwj-H9-2H2" secondAttribute="centerY" id="lJO-XW-3bj"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gU4-PN-7V5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-776.3671875" y="39.84375"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8aa-yV-Osq"/>
                         <viewControllerLayoutGuide type="bottom" id="qHh-Mt-9TT"/>
                     </layoutGuides>
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewa-73-klD" customClass="SKView">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="368"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LVf-oq-IjD">
+                                <rect key="frame" x="0.0" y="368" width="1024" height="400"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </sceneKitView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97082453966140747" green="0.9103049635887146" blue="0.56424099206924438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ewa-73-klD" secondAttribute="trailing" id="8E4-dK-AOY"/>
+                            <constraint firstItem="ewa-73-klD" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" id="8cM-f7-QCe"/>
+                            <constraint firstItem="ewa-73-klD" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" id="Mst-HW-Hog"/>
+                            <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="ewa-73-klD" secondAttribute="bottom" constant="400" id="gZy-M9-6cF"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sceneKitView" destination="LVf-oq-IjD" id="qYJ-wa-J5j"/>
+                        <outlet property="skview" destination="ewa-73-klD" id="Wl9-oW-B54"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="33.984375" y="38.28125"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Super Mario Kehrt" width="3004" height="996"/>
+        <image name="select_luigi" width="48" height="48"/>
+        <image name="select_mario" width="48" height="48"/>
+        <image name="select_peach" width="48" height="48"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="dEH-AL-3wH"/>
+    </inferredMetricsTieBreakers>
 </document>

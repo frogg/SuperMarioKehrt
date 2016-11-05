@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
 #import <GameplayKit/GameplayKit.h>
+@import SceneKit;
 
 @interface GameViewController : UIViewController
+@property (strong, nonatomic) IBOutlet SKView *skview;
+@property (strong, nonatomic) IBOutlet SCNView *sceneKitView;
 
 @end

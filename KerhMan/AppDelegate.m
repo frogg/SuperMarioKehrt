@@ -20,8 +20,10 @@
     // Override point for customization after application launch.
     
     
-    self.kehrmaschine = [[Kehrmaschine alloc] initWithIpAddress:@"192.168.100.99" withUserName:@"root" withPassword:@"KyQETdMx8xTHAS{R"];
-    [self.kehrmaschine startMonitoringSpeed];
+    //self.kehrmaschine = [[Kehrmaschine alloc] initWithIpAddress:@"192.168.100.99" withUserName:@"root" withPassword:@"KyQETdMx8xTHAS{R"];
+   // [self.kehrmaschine startMonitoringSpeed];
+    
+    self.socketListener = [[TCPSocketListener alloc] initSocketListenerForPort:4242];
     
     return YES;
 }

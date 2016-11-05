@@ -8,26 +8,48 @@
 
 #import "GameViewController.h"
 #import "GameScene.h"
+#import "MapScene.h"
 
 @implementation GameViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    // Load the SKScene from 'GameScene.sks'
-    GameScene *scene = (GameScene *)[SKScene nodeWithFileNamed:@"GameScene"];
     
-    // Set the scale mode to scale to fit the window
-    scene.scaleMode = SKSceneScaleModeAspectFill;
-    
-    SKView *skView = (SKView *)self.view;
-    
-    // Present the scene
-    [skView presentScene:scene];
-    
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
 }
+
+-(void)viewWillAppear:(BOOL)animated {
+    GameScene* gameScene = [[GameScene alloc] initWithSize:self.skview.frame.size];
+
+    [self.skview presentScene: gameScene];
+    
+    [NSTimer scheduledTimerWithTimeInterval:0.15f repeats:YES block:^(NSTimer * _Nonnull timer) {
+        [gameScene moveRight];
+        
+        [NSTimer scheduledTimerWithTimeInterval:0.05f repeats:NO block:^(NSTimer * _Nonnull timer) {
+            [gameScene moveRight];
+            
+            [NSTimer scheduledTimerWithTimeInterval:0.05f repeats:NO block:^(NSTimer * _Nonnull timer) {
+               // [gameScene moveRight];
+            }];
+        }];
+        
+        
+    }];
+    
+    
+    MapScene* mapScene = [[MapScene alloc] init];
+    
+    
+    self.sceneKitView.scene = mapScene;
+    [mapScene moveCamera];
+    
+    //self.sceneKitView.allowsCameraControl = YES;
+    
+    
+    
+    
+}
+
 
 - (BOOL)shouldAutorotate {
     return YES;
