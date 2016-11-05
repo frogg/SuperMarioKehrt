@@ -9,9 +9,13 @@
 #import <SceneKit/SceneKit.h>
 
 @interface MapScene : SCNScene {
-    SCNNode* cameraNode;
+    SCNFloor* floor;
+    SCNSphere* sphere;
 }
 
--(void) moveCamera;
+@property SCNNode* cameraNode;
+-(void) moveForward;
+-(void) moveRight;
+-(void) moveLeft;
 
 @end

@@ -41,7 +41,7 @@
 
 }
 
--(void) moveLeft {
+-(void) moveRight {
     if(backgroundTrees.frame.origin.x < -backgroundTrees.frame.size.width) {
         SKAction* moveTrees = [SKAction moveTo:CGPointMake(self.view.frame.size.width, 0) duration:0];
         [backgroundTrees runAction:moveTrees];
@@ -52,7 +52,7 @@
     
     
     
-    if(backgroundHills.frame.origin.x < -backgroundTrees.frame.size.width) {
+    if(backgroundHills.frame.origin.x < -backgroundHills.frame.size.width) {
         SKAction* moveHills = [SKAction moveTo:CGPointMake(self.view.frame.size.width, 0) duration:0];
         [backgroundHills runAction:moveHills];
     }
@@ -64,7 +64,7 @@
     
 }
 
--(void) moveRight {
+-(void) moveLeft {
     
     
     if(backgroundTrees.frame.origin.x > self.view.frame.size.width) {

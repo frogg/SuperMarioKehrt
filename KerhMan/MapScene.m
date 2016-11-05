@@ -7,55 +7,74 @@
 //
 
 #import "MapScene.h"
-
+#define MCP_DEGREES_TO_RADIANS(angle) ((angle) / 180.0 * M_PI)
 @implementation MapScene
 
 -(instancetype) init {
     self = [super init];
     
     if(self) {
-        SCNPlane* plane = [[SCNPlane alloc] init];
-        plane.firstMaterial.diffuse.contents = [UIImage imageNamed:@"map_1"];
-        plane.firstMaterial.diffuse.minificationFilter = SCNFilterModeNearest;
-        plane.firstMaterial.diffuse.magnificationFilter = SCNFilterModeNearest;
-       // plane.width = 4000;
-      //  plane.height = 4000;
+    
         
         
-        SCNNode* planeNode = [SCNNode nodeWithGeometry:plane];
-        //planeNode.rotation = SCNVector4Make(1, 0, 0, M_PI/3);
-        planeNode.scale = SCNVector3Make(50, 50, 50);
-        //planeNode.position =
-        [self.rootNode addChildNode:planeNode];
         
+        // Create a camera
+        SCNCamera *camera = [SCNCamera camera];
+        camera.xFov = 45;   // Degrees, not radians
+        camera.yFov = 45;
         
-        SCNCamera* camera = [SCNCamera camera];
-        camera.usesOrthographicProjection = true;
-        camera.orthographicScale = 9;
-        camera.zNear = 0;
-        //camera.zFar = 200;
-        //camera.focalDistance = 1000.f;
+        self.cameraNode = [SCNNode node];
+        self.cameraNode.camera = camera;
+        self.cameraNode.position = SCNVector3Make(0, 0, 0);
+        [self.rootNode addChildNode:self.cameraNode];
         
-        cameraNode = [SCNNode node];
-        //cameraNode.position = SCNVector3Make(0, 0, 0);
+
         
-        cameraNode.camera = camera;
-        cameraNode.rotation = SCNVector4Make(1, 0, 0, M_PI/3);
-        [self.rootNode addChildNode:cameraNode];
+        floor = [SCNFloor floor];
+        //floor.reflectionFalloffEnd = 10;
+        //floor.reflectivity = 1.f;
+        floor.firstMaterial.diffuse.contents = [UIImage imageNamed:@"map_1"];
+        floor.firstMaterial.diffuse.minificationFilter = SCNFilterModeNearest;
+        floor.firstMaterial.diffuse.magnificationFilter = SCNFilterModeNearest;
         
-        /*let planeNode = SCNNode(geometry: plane)
-        planeNode.position = SCNVector3Make(0, 0, 100)
-        [self.rootNode addChildNode:plane];*/
+        SCNNode* floorNode = [SCNNode nodeWithGeometry:floor];
+        floorNode.position = SCNVector3Make(0, -1, 0);
+        [self.rootNode addChildNode:floorNode];
+        
+
+
     }
     
     
     return self;
 }
 
-
--(void) moveCamera {
-    SCNAction* move = [SCNAction moveBy:SCNVector3Make(0, 10, 0) duration:10];
-    [cameraNode runAction:move];
+-(void) moveLeft {
+    SCNAction* move = [SCNAction rotateByAngle:0.25f aroundAxis:SCNVector3Make(0, 1, 0) duration:0.5];
+    [self.cameraNode runAction:move];
 }
+
+-(void) moveRight {
+    SCNAction* move = [SCNAction rotateByAngle:-0.25f aroundAxis:SCNVector3Make(0, 1, 0) duration:0.5];
+    [self.cameraNode runAction:move];
+}
+
+-(void) moveForward {
+    
+    
+    
+    double yangle = self.cameraNode.rotation.y * self.cameraNode.rotation.w;
+    
+    NSLog(@"Camera Winkel: %f",yangle);
+    
+    double yMovement = -cos(yangle) * 1;
+    double xMovement = -sin(yangle) * 1;
+    
+    NSLog(@"Movement: %f, %f",xMovement,yMovement);
+    
+    SCNAction* move = [SCNAction moveByX:xMovement y:0 z:yMovement duration:0.5];
+    [self.cameraNode runAction:move];
+}
+
 
 @end

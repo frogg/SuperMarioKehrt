@@ -9,10 +9,21 @@
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
 #import <GameplayKit/GameplayKit.h>
+#import "MapScene.h"
 @import SceneKit;
+
+typedef enum {
+    DrivingDirectionForward,
+    DrivingDirectionLeft,
+    DrivingDirectionRight
+} DrivingDirection;
+
 
 @interface GameViewController : UIViewController
 @property (strong, nonatomic) IBOutlet SKView *skview;
 @property (strong, nonatomic) IBOutlet SCNView *sceneKitView;
+@property (strong, nonatomic) IBOutlet UIImageView *gameCharacter;
+@property MapScene* mapScene;
+@property DrivingDirection drivingDirection;
 
 @end
