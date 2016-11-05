@@ -9,7 +9,8 @@
 #import <SceneKit/SceneKit.h>
 
 @interface MapScene : SCNScene {
-    
+    SCNFloor* floor;
+    SCNSphere* sphere;
 }
 
 @property SCNNode* cameraNode;

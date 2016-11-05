@@ -149,7 +149,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="368"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LVf-oq-IjD">
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" loops="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVf-oq-IjD">
                                 <rect key="frame" x="0.0" y="368" width="1024" height="400"/>
                             </sceneKitView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mario_back" translatesAutoresizingMaskIntoConstraints="NO" id="gVO-c3-1As">
@@ -162,24 +162,59 @@
                         </subviews>
                         <color key="backgroundColor" red="0.97082453966140747" green="0.9103049635887146" blue="0.56424099206924438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="LVf-oq-IjD" firstAttribute="bottom" secondItem="qHh-Mt-9TT" secondAttribute="top" id="3oe-VU-CIs"/>
                             <constraint firstAttribute="bottom" secondItem="gVO-c3-1As" secondAttribute="bottom" constant="20" symbolic="YES" id="5Na-Ou-mM7"/>
                             <constraint firstAttribute="trailing" secondItem="ewa-73-klD" secondAttribute="trailing" id="8E4-dK-AOY"/>
                             <constraint firstItem="ewa-73-klD" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" id="8cM-f7-QCe"/>
+                            <constraint firstItem="LVf-oq-IjD" firstAttribute="leading" secondItem="ewa-73-klD" secondAttribute="leading" id="H2F-ZB-Vhz"/>
                             <constraint firstItem="ewa-73-klD" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" id="Mst-HW-Hog"/>
-                            <constraint firstItem="gVO-c3-1As" firstAttribute="centerX" secondItem="LVf-oq-IjD" secondAttribute="centerX" id="T1c-ys-CE1"/>
+                            <constraint firstItem="LVf-oq-IjD" firstAttribute="top" secondItem="ewa-73-klD" secondAttribute="bottom" id="UTm-Jz-mz7"/>
+                            <constraint firstItem="LVf-oq-IjD" firstAttribute="trailing" secondItem="ewa-73-klD" secondAttribute="trailing" id="Z4Z-2M-fvC"/>
                             <constraint firstItem="gVO-c3-1As" firstAttribute="centerX" secondItem="ewa-73-klD" secondAttribute="centerX" id="dim-Nb-dZI"/>
                             <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="ewa-73-klD" secondAttribute="bottom" constant="400" id="gZy-M9-6cF"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="gameCharacter" destination="gVO-c3-1As" id="eeJ-1u-c2q"/>
-                        <outlet property="sceneKitView" destination="LVf-oq-IjD" id="qYJ-wa-J5j"/>
+                        <outlet property="sceneKitView" destination="LVf-oq-IjD" id="lKC-3c-sle"/>
                         <outlet property="skview" destination="ewa-73-klD" id="Wl9-oW-B54"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="33.984375" y="38.28125"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="s5R-IM-Lcf">
+            <objects>
+                <viewController id="1wA-Fz-tfR" customClass="GameViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TfM-3C-HNC"/>
+                        <viewControllerLayoutGuide type="bottom" id="U44-Nx-Oyt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cwF-bD-tEw">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" loops="NO" jitteringEnabled="YES" allowsCameraControl="YES" wantsMultisampling="YES" autoenablesDefaultLighting="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fot-a2-6Vb">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </sceneKitView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fot-a2-6Vb" firstAttribute="leading" secondItem="cwF-bD-tEw" secondAttribute="leading" id="F7i-uR-5fb"/>
+                            <constraint firstAttribute="trailing" secondItem="fot-a2-6Vb" secondAttribute="trailing" id="JK4-AC-nIk"/>
+                            <constraint firstItem="fot-a2-6Vb" firstAttribute="bottom" secondItem="U44-Nx-Oyt" secondAttribute="top" id="LhS-va-kC3"/>
+                            <constraint firstItem="fot-a2-6Vb" firstAttribute="top" secondItem="cwF-bD-tEw" secondAttribute="top" id="t4N-9A-xBz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="sceneKitView" destination="fot-a2-6Vb" id="zAA-sC-9fV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DIY-Hg-bff" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="70.3125"/>
         </scene>
     </scenes>
     <resources>

@@ -8,7 +8,6 @@
 
 #import "GameViewController.h"
 #import "GameScene.h"
-#import "MapScene.h"
 
 @implementation GameViewController
 
@@ -21,19 +20,20 @@
     self.drivingDirection = DrivingDirectionForward;
     
     GameScene* gameScene = [[GameScene alloc] initWithSize:self.skview.frame.size];
-
+    
     [self.skview presentScene: gameScene];
     
     self.gameCharacter.layer.magnificationFilter = kCAFilterNearest;
     
     
-    MapScene* mapScene = [[MapScene alloc] init];
+    self.mapScene = [[MapScene alloc] init];
     
     
-    self.sceneKitView.scene = mapScene;
+    
+    self.sceneKitView.scene = self.mapScene;
     
     
-    self.sceneKitView.allowsCameraControl = YES;
+    //self.sceneKitView.allowsCameraControl = YES;
     
     
     
@@ -41,26 +41,25 @@
         if(self.drivingDirection == DrivingDirectionRight) {
             self.gameCharacter.image = [UIImage imageNamed:@"mario_right"];
             [gameScene moveRight];
-            [mapScene moveRight];
-            [mapScene moveForward];
+            [self.mapScene moveRight];
+            [self.mapScene moveForward];
         } else if(self.drivingDirection == DrivingDirectionLeft) {
             self.gameCharacter.image = [UIImage imageNamed:@"mario_left"];
             [gameScene moveLeft];
-            [mapScene moveLeft];
-            [mapScene moveForward];
-        } else {
+            [self.mapScene moveLeft];
+            [self.mapScene moveForward];
+        } else if(self.drivingDirection == DrivingDirectionForward) {
             self.gameCharacter.image = [UIImage imageNamed:@"mario_back"];
-            [mapScene moveForward];
+            [self.mapScene moveForward];
         }
-        
     }];
     
     
     
     
     [NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
-        [mapScene moveForward];
-        NSLog(@"Camera: %f, %f, %f, %f",mapScene.cameraNode.rotation.x,mapScene.cameraNode.rotation.y,mapScene.cameraNode.rotation.z,mapScene.cameraNode.rotation.w);
+        [self.mapScene moveForward];
+        NSLog(@"Camera: %f, %f, %f, %f",self.mapScene.cameraNode.rotation.x,self.mapScene.cameraNode.rotation.y,self.mapScene.cameraNode.rotation.z,self.mapScene.cameraNode.rotation.w);
     }];
     
     
