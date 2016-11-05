@@ -28,5 +28,7 @@ typedef enum {
 @property double vehicleSteeringDirection;
 @property double vehicleSpeed;
 @property NSString* driverName;
+@property DrivingDirection lastDrivingDirection;
+
 
 @end
