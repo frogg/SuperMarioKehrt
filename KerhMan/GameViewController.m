@@ -58,7 +58,7 @@
     
     
     [NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
-        [self.mapScene moveForward];
+        
         NSLog(@"Camera: %f, %f, %f, %f",self.mapScene.cameraNode.rotation.x,self.mapScene.cameraNode.rotation.y,self.mapScene.cameraNode.rotation.z,self.mapScene.cameraNode.rotation.w);
     }];
     
