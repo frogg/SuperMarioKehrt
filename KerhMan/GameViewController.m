@@ -24,7 +24,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-    self.drivingDirection = DrivingDirectionForward;
+    
     
     GameScene* gameScene = [[GameScene alloc] initWithSize:self.skview.frame.size];
     
@@ -42,48 +42,54 @@
     
     AMGSoundManager* _soundManager = [AMGSoundManager sharedManager];
     [_soundManager playAudio:[[NSBundle mainBundle] pathForResource:@"driving" ofType:@"mp3"] withName:@"driving" inLine:@"driving" withVolume:1 andRepeatCount:-1 fadeDuration:0 withCompletitionHandler:nil];
-//    
-//    [NSTimer scheduledTimerWithTimeInterval:7 repeats:YES block:^(NSTimer * _Nonnull timer) {
-//        [soundManager setVolume:0.3 forLine:@"driving" withFadeDuration:1];
-//        [soundManager playAudio: [[NSBundle mainBundle] pathForResource:@"drifting" ofType:@"mp3"] withName:@"drifting" inLine:@"drifting" withVolume:0.8 andRepeatCount:0 fadeDuration:0.2 withCompletitionHandler:^(BOOL success, BOOL stopped) {
-//        }];
-//        [soundManager setVolume:1 forLine:@"driving" withFadeDuration:5];
-//
-//    }];
-    
-    
-    //self.sceneKitView.allowsCameraControl = YES;
-    
+
     
     
     [NSTimer scheduledTimerWithTimeInterval:animationLength repeats:YES block:^(NSTimer * _Nonnull timer) {
         AMGSoundManager* soundManager = [AMGSoundManager sharedManager];
-        if(self.drivingDirection == DrivingDirectionRight) {
-            self.gameCharacter.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@_right",self.driverName]];
-            [gameScene moveRight];
-            [self.mapScene moveRight];
-            [self.mapScene moveForwardWithSpeed:self.vehicleSpeed / 1.5];
-        } else if(self.drivingDirection == DrivingDirectionLeft) {
-            self.gameCharacter.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@_left",self.driverName]];
+        
+        if([self currentDrivingDirection] == DrivingDirectionLeft) {
             [gameScene moveLeft];
-            [self.mapScene moveLeft];
+            self.gameCharacter.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@_left",self.driverName]];
+            [self.mapScene steerWithSteeringAnghel:self.vehicleSteeringAngel];
+            [self.mapScene moveForwardWithSpeed:self.vehicleSpeed / 1.5];
+            
+        } else if([self currentDrivingDirection] == DrivingDirectionRight) {
+            [gameScene moveRight];
+            self.gameCharacter.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@_right",self.driverName]];
+            [self.mapScene steerWithSteeringAnghel:self.vehicleSteeringAngel];
             [self.mapScene moveForwardWithSpeed: self.vehicleSpeed / 1.5];
-        } else if(self.drivingDirection == DrivingDirectionForward) {
+            
+        } else if([self currentDrivingDirection] == DrivingDirectionForward) {
             self.gameCharacter.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@_back",self.driverName]];
             [self.mapScene moveForwardWithSpeed:self.vehicleSpeed];
         }
         
-        if (self.drivingDirection != DrivingDirectionForward && ![soundManager isAudioPlayingInLine:@"drifting"] && self.drivingDirection != self.lastDrivingDirection) {
+        
+        if ([self currentDrivingDirection] != DrivingDirectionForward && ![soundManager isAudioPlayingInLine:@"drifting"] && [self currentDrivingDirection] != self.lastDrivingDirection) {
             [soundManager playAudio:[[NSBundle mainBundle] pathForResource:@"drifting" ofType:@"mp3"] withName:@"right" inLine:@"drifting" withVolume:1 andRepeatCount:0 fadeDuration:0 withCompletitionHandler:nil];
             [soundManager setVolume:0.3 forLine:@"driving" withFadeDuration:1];
             [NSTimer scheduledTimerWithTimeInterval:2 repeats:NO block:^(NSTimer * _Nonnull timer) {
                 [soundManager setVolume:1 forLine:@"driving" withFadeDuration:1];
             }];
         }
-        self.lastDrivingDirection = self.drivingDirection;
+        self.lastDrivingDirection = [self currentDrivingDirection];
     }];
     
 
+    
+}
+
+
+-(DrivingDirection) currentDrivingDirection {
+    
+    if(self.vehicleSteeringAngel > 0.25) {
+        return DrivingDirectionLeft;
+    } else if(self.vehicleSteeringAngel < -0.25) {
+        return DrivingDirectionRight;
+    }
+    
+    return DrivingDirectionForward;
     
 }
 
@@ -92,13 +98,13 @@
     
     CGPoint touchPoint = [touch locationInView:self.view];
     
-    if(touchPoint.x < self.view.frame.size.width / 3.f) {
-        self.drivingDirection = DrivingDirectionLeft;
-    } else if(touchPoint.x < self.view.frame.size.width * (2.f/3.f)) {
-        self.drivingDirection = DrivingDirectionForward;
-    } else if(touchPoint.x > self.view.frame.size.width * (2.f/3.f)){
-        self.drivingDirection = DrivingDirectionRight;
+    if(touchPoint.x < self.view.frame.size.width / 2.f) {
+        self.vehicleSteeringAngel = ((self.view.frame.size.width/2)-(touchPoint.x)) / (self.view.frame.size.width/2);
+    } else {
+        self.vehicleSteeringAngel = -(touchPoint.x-(self.view.frame.size.width/2)) / (self.view.frame.size.width/2);
     }
+    
+    NSLog(@"%f",self.vehicleSteeringAngel);
 }
 
 

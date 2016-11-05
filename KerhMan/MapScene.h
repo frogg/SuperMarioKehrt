@@ -15,7 +15,6 @@
 
 @property SCNNode* cameraNode;
 -(void) moveForwardWithSpeed:(double) speed;
--(void) moveRight;
--(void) moveLeft;
+-(void) steerWithSteeringAnghel:(double) steeringAngel;
 
 @end
