@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <NMSSH/NMSSH.h>
+#import "SSHWrapper.h"
 
 @protocol KehrmaschineDelegate <NSObject>
 
@@ -16,10 +16,10 @@
 
 @end
 
-@interface Kehrmaschine : NSObject <NMSSHChannelDelegate, NMSSHSessionDelegate>
+@interface Kehrmaschine : NSObject
 
 
-@property NMSSHSession* session;
+@property SSHWrapper* sshWrapper;
 
 -(instancetype) initWithIpAddress:(NSString*) ipAddress withUserName:(NSString*) username withPassword:(NSString*) password;
 -(void) startMonitoringSpeed;
