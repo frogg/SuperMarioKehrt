@@ -85,21 +85,21 @@
 			children = (
 				5162D1E11DCD24D200EC08D5 /* AppDelegate.h */,
 				5162D1E21DCD24D200EC08D5 /* AppDelegate.m */,
-				7FCB64911DCDC3FD006812B0 /* Kehrmaschine.swift */,
-				5162D1EB1DCD24D200EC08D5 /* GameViewController.h */,
-				5162D1EC1DCD24D200EC08D5 /* GameViewController.m */,
-				517678221DCE1F4E00FB9E5D /* GameScene.h */,
-				517678231DCE1F4E00FB9E5D /* GameScene.m */,
-				517678241DCE1F4E00FB9E5D /* GameStartScreenViewController.h */,
-				517678251DCE1F4E00FB9E5D /* GameStartScreenViewController.m */,
+				517678301DCE1F6100FB9E5D /* TCPSocketListener.h */,
+				517678311DCE1F6100FB9E5D /* TCPSocketListener.m */,
 				517678261DCE1F4E00FB9E5D /* GCDAsyncSocket.h */,
 				517678271DCE1F4E00FB9E5D /* GCDAsyncSocket.m */,
 				517678281DCE1F4E00FB9E5D /* GCDAsyncUdpSocket.h */,
 				517678291DCE1F4E00FB9E5D /* GCDAsyncUdpSocket.m */,
+				7FCB64911DCDC3FD006812B0 /* Kehrmaschine.swift */,
+				517678241DCE1F4E00FB9E5D /* GameStartScreenViewController.h */,
+				517678251DCE1F4E00FB9E5D /* GameStartScreenViewController.m */,
+				5162D1EB1DCD24D200EC08D5 /* GameViewController.h */,
+				5162D1EC1DCD24D200EC08D5 /* GameViewController.m */,
+				517678221DCE1F4E00FB9E5D /* GameScene.h */,
+				517678231DCE1F4E00FB9E5D /* GameScene.m */,
 				5176782E1DCE1F6100FB9E5D /* MapScene.h */,
 				5176782F1DCE1F6100FB9E5D /* MapScene.m */,
-				517678301DCE1F6100FB9E5D /* TCPSocketListener.h */,
-				517678311DCE1F6100FB9E5D /* TCPSocketListener.m */,
 				5162D1EE1DCD24D200EC08D5 /* Main.storyboard */,
 				5162D1F11DCD24D300EC08D5 /* Assets.xcassets */,
 				5162D1F31DCD24D300EC08D5 /* LaunchScreen.storyboard */,
@@ -158,7 +158,7 @@
 				TargetAttributes = {
 					5162D1DA1DCD24D200EC08D5 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = P459Y32P65;
+						DevelopmentTeam = 52U6XAJSSF;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
@@ -347,7 +347,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = P459Y32P65;
+				DEVELOPMENT_TEAM = 52U6XAJSSF;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -373,7 +373,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = P459Y32P65;
+				DEVELOPMENT_TEAM = 52U6XAJSSF;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

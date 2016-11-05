@@ -16,6 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.selectLuigi.imageView.layer.magnificationFilter = kCAFilterNearest;
+    self.selectMario.imageView.layer.magnificationFilter = kCAFilterNearest;
+    self.selectPeach.imageView.layer.magnificationFilter = kCAFilterNearest;
     // Do any additional setup after loading the view.
 }
 

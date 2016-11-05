@@ -31,17 +31,18 @@
         
         SCNCamera* camera = [SCNCamera camera];
         camera.usesOrthographicProjection = true;
-        camera.orthographicScale = 9;
-        camera.zNear = 0;
+        //camera.orthographicScale = 9;
+        //camera.zNear = 0;
         //camera.zFar = 200;
         //camera.focalDistance = 1000.f;
         
-        cameraNode = [SCNNode node];
+        self.cameraNode = [SCNNode node];
         //cameraNode.position = SCNVector3Make(0, 0, 0);
         
-        cameraNode.camera = camera;
-        cameraNode.rotation = SCNVector4Make(1, 0, 0, M_PI/3);
-        [self.rootNode addChildNode:cameraNode];
+        self.cameraNode.camera = camera;
+        self.cameraNode.rotation = SCNVector4Make(1, 0, 0, 1.04);
+        
+        [self.rootNode addChildNode:self.cameraNode];
         
         /*let planeNode = SCNNode(geometry: plane)
         planeNode.position = SCNVector3Make(0, 0, 100)
@@ -52,10 +53,20 @@
     return self;
 }
 
-
--(void) moveCamera {
-    SCNAction* move = [SCNAction moveBy:SCNVector3Make(0, 10, 0) duration:10];
-    [cameraNode runAction:move];
+-(void) moveLeft {
+    SCNAction* move = [SCNAction rotateByAngle:-1 aroundAxis:SCNVector3Make(0, 0, 1) duration:0.5];
+    [self.cameraNode runAction:move];
 }
+
+-(void) moveRight {
+    SCNAction* move = [SCNAction rotateByAngle:1 aroundAxis:SCNVector3Make(0, 0, 1) duration:0.5];
+    [self.cameraNode runAction:move];
+}
+
+-(void) moveForward {
+    SCNAction* move = [SCNAction moveBy:SCNVector3Make(0, 0, -1) duration:0.5];
+    [self.cameraNode runAction:move];
+}
+
 
 @end

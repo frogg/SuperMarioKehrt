@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface GameStartScreenViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UIButton *selectLuigi;
+@property (strong, nonatomic) IBOutlet UIButton *selectMario;
+@property (strong, nonatomic) IBOutlet UIButton *selectPeach;
 
 @end

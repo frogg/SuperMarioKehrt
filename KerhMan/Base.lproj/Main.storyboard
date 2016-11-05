@@ -123,6 +123,11 @@
                             <constraint firstItem="crv-6x-nQk" firstAttribute="centerY" secondItem="Bwj-H9-2H2" secondAttribute="centerY" id="lJO-XW-3bj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="selectLuigi" destination="qMf-KU-Lb8" id="CIU-yO-TG6"/>
+                        <outlet property="selectMario" destination="eB6-QR-xQ2" id="QFi-lp-7E1"/>
+                        <outlet property="selectPeach" destination="dnF-Kb-BMC" id="K92-hS-Wlb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gU4-PN-7V5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -144,20 +149,30 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="368"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LVf-oq-IjD">
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LVf-oq-IjD">
                                 <rect key="frame" x="0.0" y="368" width="1024" height="400"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </sceneKitView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mario_back" translatesAutoresizingMaskIntoConstraints="NO" id="gVO-c3-1As">
+                                <rect key="frame" x="392" y="512" width="240" height="236"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="cAW-z5-JQJ"/>
+                                    <constraint firstAttribute="height" constant="236" id="qxh-lm-m7J"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.97082453966140747" green="0.9103049635887146" blue="0.56424099206924438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="gVO-c3-1As" secondAttribute="bottom" constant="20" symbolic="YES" id="5Na-Ou-mM7"/>
                             <constraint firstAttribute="trailing" secondItem="ewa-73-klD" secondAttribute="trailing" id="8E4-dK-AOY"/>
                             <constraint firstItem="ewa-73-klD" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" id="8cM-f7-QCe"/>
                             <constraint firstItem="ewa-73-klD" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" id="Mst-HW-Hog"/>
+                            <constraint firstItem="gVO-c3-1As" firstAttribute="centerX" secondItem="LVf-oq-IjD" secondAttribute="centerX" id="T1c-ys-CE1"/>
+                            <constraint firstItem="gVO-c3-1As" firstAttribute="centerX" secondItem="ewa-73-klD" secondAttribute="centerX" id="dim-Nb-dZI"/>
                             <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="ewa-73-klD" secondAttribute="bottom" constant="400" id="gZy-M9-6cF"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="gameCharacter" destination="gVO-c3-1As" id="eeJ-1u-c2q"/>
                         <outlet property="sceneKitView" destination="LVf-oq-IjD" id="qYJ-wa-J5j"/>
                         <outlet property="skview" destination="ewa-73-klD" id="Wl9-oW-B54"/>
                     </connections>
@@ -169,6 +184,7 @@
     </scenes>
     <resources>
         <image name="Super Mario Kehrt" width="3004" height="996"/>
+        <image name="mario_back" width="32" height="32"/>
         <image name="select_luigi" width="48" height="48"/>
         <image name="select_mario" width="48" height="48"/>
         <image name="select_peach" width="48" height="48"/>
