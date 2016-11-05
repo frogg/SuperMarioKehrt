@@ -17,8 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.selectLuigi.imageView.layer.magnificationFilter = kCAFilterNearest;
+    self.selectLuigi.imageView.layer.minificationFilter = kCAFilterNearest;
+    
     self.selectMario.imageView.layer.magnificationFilter = kCAFilterNearest;
+    self.selectMario.imageView.layer.minificationFilter = kCAFilterNearest;
+    
     self.selectPeach.imageView.layer.magnificationFilter = kCAFilterNearest;
+    self.selectPeach.imageView.layer.minificationFilter = kCAFilterNearest;
     // Do any additional setup after loading the view.
 }
 
@@ -30,6 +35,14 @@
 
 - (BOOL)prefersStatusBarHidden {
     return YES;
+}
+- (IBAction)selectedLuigi:(id)sender {
+}
+
+- (IBAction)selectedMario:(id)sender {
+}
+
+- (IBAction)selectedPeach:(id)sender {
 }
 
 /*

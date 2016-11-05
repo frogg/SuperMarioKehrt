@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JVj-cm-ORp">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -40,6 +40,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="150" height="151"/>
                                                         <state key="normal" backgroundImage="select_luigi"/>
                                                         <connections>
+                                                            <action selector="selectedLuigi:" destination="JVj-cm-ORp" eventType="touchUpInside" id="m5h-f5-rpq"/>
                                                             <segue destination="BV1-FR-VrT" kind="show" id="Tk9-O5-KYc"/>
                                                         </connections>
                                                     </button>
@@ -61,6 +62,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="150" height="151"/>
                                                         <state key="normal" backgroundImage="select_mario"/>
                                                         <connections>
+                                                            <action selector="selectedMario:" destination="JVj-cm-ORp" eventType="touchUpInside" id="caK-6O-Yv9"/>
                                                             <segue destination="BV1-FR-VrT" kind="show" id="2bp-f2-W00"/>
                                                         </connections>
                                                     </button>
@@ -82,6 +84,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="150" height="151"/>
                                                         <state key="normal" backgroundImage="select_peach"/>
                                                         <connections>
+                                                            <action selector="selectedPeach:" destination="JVj-cm-ORp" eventType="touchUpInside" id="Ka3-uP-Reg"/>
                                                             <segue destination="BV1-FR-VrT" kind="show" id="dEH-AL-3wH"/>
                                                         </connections>
                                                     </button>
