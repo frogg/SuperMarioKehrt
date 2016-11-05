@@ -22,6 +22,7 @@
 		517677BD1DCD5C4100FB9E5D /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 517677BC1DCD5C4100FB9E5D /* libssl.a */; };
 		517677BF1DCD5CEE00FB9E5D /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 517677BE1DCD5CEE00FB9E5D /* libcrypto.a */; };
 		7F65F7C01DCD3993000F96D8 /* NMSSH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F65F7BF1DCD3993000F96D8 /* NMSSH.framework */; };
+		7FCB64921DCDC3FD006812B0 /* SSHTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCB64911DCDC3FD006812B0 /* SSHTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,6 +126,8 @@
 		5176780E1DCD5DD700FB9E5D /* x509_vfy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509_vfy.h; sourceTree = "<group>"; };
 		5176780F1DCD5DD700FB9E5D /* x509v3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509v3.h; sourceTree = "<group>"; };
 		7F65F7BF1DCD3993000F96D8 /* NMSSH.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NMSSH.framework; path = Carthage/Build/iOS/NMSSH.framework; sourceTree = "<group>"; };
+		7FCB64901DCDC3FC006812B0 /* KerhMan-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KerhMan-Bridging-Header.h"; sourceTree = "<group>"; };
+		7FCB64911DCDC3FD006812B0 /* SSHTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSHTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +176,7 @@
 				5162D1E21DCD24D200EC08D5 /* AppDelegate.m */,
 				517677211DCD299C00FB9E5D /* Kehrmaschine.h */,
 				517677221DCD299C00FB9E5D /* Kehrmaschine.m */,
+				7FCB64911DCDC3FD006812B0 /* SSHTest.swift */,
 				5162D1E41DCD24D200EC08D5 /* GameScene.sks */,
 				5162D1E61DCD24D200EC08D5 /* Actions.sks */,
 				5162D1E81DCD24D200EC08D5 /* GameScene.h */,
@@ -184,6 +188,7 @@
 				5162D1F31DCD24D300EC08D5 /* LaunchScreen.storyboard */,
 				5162D1F61DCD24D300EC08D5 /* Info.plist */,
 				5162D1DE1DCD24D200EC08D5 /* Supporting Files */,
+				7FCB64901DCDC3FC006812B0 /* KerhMan-Bridging-Header.h */,
 			);
 			path = KerhMan;
 			sourceTree = "<group>";
@@ -328,7 +333,8 @@
 				TargetAttributes = {
 					5162D1DA1DCD24D200EC08D5 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 52U6XAJSSF;
+						DevelopmentTeam = P459Y32P65;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -390,6 +396,7 @@
 			files = (
 				5162D1ED1DCD24D200EC08D5 /* GameViewController.m in Sources */,
 				517677231DCD299C00FB9E5D /* Kehrmaschine.m in Sources */,
+				7FCB64921DCDC3FD006812B0 /* SSHTest.swift in Sources */,
 				517677421DCD50DB00FB9E5D /* SSHWrapper.m in Sources */,
 				5162D1E31DCD24D200EC08D5 /* AppDelegate.m in Sources */,
 				5162D1EA1DCD24D200EC08D5 /* GameScene.m in Sources */,
@@ -513,7 +520,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 52U6XAJSSF;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = P459Y32P65;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -528,6 +536,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.frogg.KerhMan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KerhMan/KerhMan-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -535,7 +546,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 52U6XAJSSF;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = P459Y32P65;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -550,6 +562,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.frogg.KerhMan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "KerhMan/KerhMan-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

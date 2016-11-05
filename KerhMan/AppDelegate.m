@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Kehrmaschine.h"
+#import "KerhMan-Swift.h"
 
 @interface AppDelegate ()
 
@@ -20,14 +21,18 @@
     // Override point for customization after application launch.
     
     
-    self.kehrmaschine = [[Kehrmaschine alloc] initWithIpAddress:@"192.168.100.99" withUserName:@"root" withPassword:@"KyQETdMx8xTHAS{R"];
-    [self.kehrmaschine startMonitoringSpeed];
+   //self.kehrmaschine = [[Kehrmaschine alloc] initWithIpAddress:@"127.0.0.1" withUserName:@"leoMehlig" withPassword:@"poposhour19"];
+    self.ssh = [[SSH alloc] initWithHost:@"192.168.100.99" user:@"root" password:@"KyQETdMx8xTHAS{R"];
+//    self.kehrmaschine = [[Kehrmaschine alloc] initWithIpAddress:@"192.168.100.99" withUserName:@"root" withPassword:@"KyQETdMx8xTHAS{R"];
+    
+//    [self.kehrmaschine startMonitoringSpeed];
     
     return YES;
 }
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
+    [self.ssh command];
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
 }
