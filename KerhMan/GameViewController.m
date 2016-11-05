@@ -74,7 +74,7 @@
         }
         
         if (self.drivingDirection != DrivingDirectionForward && ![soundManager isAudioPlayingInLine:@"drifting"] && self.drivingDirection != self.lastDrivingDirection) {
-            [soundManager playAudio:[[NSBundle mainBundle] pathForResource:@"drifting" ofType:@"mp3"] withName:@"right" inLine:@"drifting" withVolume:1 andRepeatCount:0 fadeDuration:0 withCompletitionHandler:nil];
+            [soundManager playAudio:[[NSBundle mainBundle] pathForResource:@"drifting" ofType:@"mp3"] withName:@"right" inLine:@"drifting" withVolume:2 andRepeatCount:0 fadeDuration:0 withCompletitionHandler:nil];
             [soundManager setVolume:0.3 forLine:@"driving" withFadeDuration:1];
             [NSTimer scheduledTimerWithTimeInterval:2 repeats:NO block:^(NSTimer * _Nonnull timer) {
                 [soundManager setVolume:1 forLine:@"driving" withFadeDuration:1];

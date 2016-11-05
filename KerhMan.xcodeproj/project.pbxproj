@@ -22,7 +22,7 @@
 		7F52C8031DCE2B3D001DB3A3 /* AMGAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F52C8001DCE2B3D001DB3A3 /* AMGAudioPlayer.m */; };
 		7F52C8041DCE2B3D001DB3A3 /* AMGSoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F52C8021DCE2B3D001DB3A3 /* AMGSoundManager.m */; };
 		7F52C8131DCE7041001DB3A3 /* driving.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7F52C8121DCE7041001DB3A3 /* driving.mp3 */; };
-		7F52C8151DCE70C2001DB3A3 /* drifting.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7F52C8141DCE70C2001DB3A3 /* drifting.mp3 */; };
+		7F52C8191DCE7706001DB3A3 /* drifting.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7F52C8181DCE7706001DB3A3 /* drifting.mp3 */; };
 		7F65F7C01DCD3993000F96D8 /* NMSSH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F65F7BF1DCD3993000F96D8 /* NMSSH.framework */; };
 		7FCB64921DCDC3FD006812B0 /* Kehrmaschine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCB64911DCDC3FD006812B0 /* Kehrmaschine.swift */; };
 /* End PBXBuildFile section */
@@ -56,7 +56,7 @@
 		7F52C8011DCE2B3D001DB3A3 /* AMGSoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMGSoundManager.h; sourceTree = "<group>"; };
 		7F52C8021DCE2B3D001DB3A3 /* AMGSoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMGSoundManager.m; sourceTree = "<group>"; };
 		7F52C8121DCE7041001DB3A3 /* driving.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = driving.mp3; sourceTree = "<group>"; };
-		7F52C8141DCE70C2001DB3A3 /* drifting.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = drifting.mp3; sourceTree = "<group>"; };
+		7F52C8181DCE7706001DB3A3 /* drifting.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = drifting.mp3; sourceTree = "<group>"; };
 		7F65F7BF1DCD3993000F96D8 /* NMSSH.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NMSSH.framework; path = Carthage/Build/iOS/NMSSH.framework; sourceTree = "<group>"; };
 		7FCB64901DCDC3FC006812B0 /* KerhMan-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KerhMan-Bridging-Header.h"; sourceTree = "<group>"; };
 		7FCB64911DCDC3FD006812B0 /* Kehrmaschine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kehrmaschine.swift; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				7F52C8121DCE7041001DB3A3 /* driving.mp3 */,
-				7F52C8141DCE70C2001DB3A3 /* drifting.mp3 */,
+				7F52C8181DCE7706001DB3A3 /* drifting.mp3 */,
 				5162D1DF1DCD24D200EC08D5 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -207,7 +207,7 @@
 			files = (
 				5162D1F01DCD24D300EC08D5 /* Main.storyboard in Resources */,
 				7F52C8131DCE7041001DB3A3 /* driving.mp3 in Resources */,
-				7F52C8151DCE70C2001DB3A3 /* drifting.mp3 in Resources */,
+				7F52C8191DCE7706001DB3A3 /* drifting.mp3 in Resources */,
 				5162D1F21DCD24D300EC08D5 /* Assets.xcassets in Resources */,
 				5162D1F51DCD24D300EC08D5 /* LaunchScreen.storyboard in Resources */,
 			);
