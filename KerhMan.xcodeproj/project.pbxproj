@@ -16,13 +16,12 @@
 		5162D1F01DCD24D300EC08D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5162D1EE1DCD24D200EC08D5 /* Main.storyboard */; };
 		5162D1F21DCD24D300EC08D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5162D1F11DCD24D300EC08D5 /* Assets.xcassets */; };
 		5162D1F51DCD24D300EC08D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5162D1F31DCD24D300EC08D5 /* LaunchScreen.storyboard */; };
-		517677231DCD299C00FB9E5D /* Kehrmaschine.m in Sources */ = {isa = PBXBuildFile; fileRef = 517677221DCD299C00FB9E5D /* Kehrmaschine.m */; };
 		517677421DCD50DB00FB9E5D /* SSHWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 517677411DCD50DB00FB9E5D /* SSHWrapper.m */; };
 		517677B91DCD557F00FB9E5D /* libssh2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 517677B81DCD557F00FB9E5D /* libssh2.a */; };
 		517677BD1DCD5C4100FB9E5D /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 517677BC1DCD5C4100FB9E5D /* libssl.a */; };
 		517677BF1DCD5CEE00FB9E5D /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 517677BE1DCD5CEE00FB9E5D /* libcrypto.a */; };
 		7F65F7C01DCD3993000F96D8 /* NMSSH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F65F7BF1DCD3993000F96D8 /* NMSSH.framework */; };
-		7FCB64921DCDC3FD006812B0 /* SSHTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCB64911DCDC3FD006812B0 /* SSHTest.swift */; };
+		7FCB64921DCDC3FD006812B0 /* Kehrmaschine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCB64911DCDC3FD006812B0 /* Kehrmaschine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,8 +39,6 @@
 		5162D1F11DCD24D300EC08D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5162D1F41DCD24D300EC08D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5162D1F61DCD24D300EC08D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		517677211DCD299C00FB9E5D /* Kehrmaschine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kehrmaschine.h; sourceTree = "<group>"; };
-		517677221DCD299C00FB9E5D /* Kehrmaschine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Kehrmaschine.m; sourceTree = "<group>"; };
 		517677401DCD50DB00FB9E5D /* SSHWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHWrapper.h; sourceTree = "<group>"; };
 		517677411DCD50DB00FB9E5D /* SSHWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHWrapper.m; sourceTree = "<group>"; };
 		517677B81DCD557F00FB9E5D /* libssh2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssh2.a; sourceTree = "<group>"; };
@@ -127,7 +124,7 @@
 		5176780F1DCD5DD700FB9E5D /* x509v3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509v3.h; sourceTree = "<group>"; };
 		7F65F7BF1DCD3993000F96D8 /* NMSSH.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NMSSH.framework; path = Carthage/Build/iOS/NMSSH.framework; sourceTree = "<group>"; };
 		7FCB64901DCDC3FC006812B0 /* KerhMan-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KerhMan-Bridging-Header.h"; sourceTree = "<group>"; };
-		7FCB64911DCDC3FD006812B0 /* SSHTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSHTest.swift; sourceTree = "<group>"; };
+		7FCB64911DCDC3FD006812B0 /* Kehrmaschine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kehrmaschine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,9 +171,7 @@
 				517677411DCD50DB00FB9E5D /* SSHWrapper.m */,
 				5162D1E11DCD24D200EC08D5 /* AppDelegate.h */,
 				5162D1E21DCD24D200EC08D5 /* AppDelegate.m */,
-				517677211DCD299C00FB9E5D /* Kehrmaschine.h */,
-				517677221DCD299C00FB9E5D /* Kehrmaschine.m */,
-				7FCB64911DCDC3FD006812B0 /* SSHTest.swift */,
+				7FCB64911DCDC3FD006812B0 /* Kehrmaschine.swift */,
 				5162D1E41DCD24D200EC08D5 /* GameScene.sks */,
 				5162D1E61DCD24D200EC08D5 /* Actions.sks */,
 				5162D1E81DCD24D200EC08D5 /* GameScene.h */,
@@ -395,8 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5162D1ED1DCD24D200EC08D5 /* GameViewController.m in Sources */,
-				517677231DCD299C00FB9E5D /* Kehrmaschine.m in Sources */,
-				7FCB64921DCDC3FD006812B0 /* SSHTest.swift in Sources */,
+				7FCB64921DCDC3FD006812B0 /* Kehrmaschine.swift in Sources */,
 				517677421DCD50DB00FB9E5D /* SSHWrapper.m in Sources */,
 				5162D1E31DCD24D200EC08D5 /* AppDelegate.m in Sources */,
 				5162D1EA1DCD24D200EC08D5 /* GameScene.m in Sources */,
