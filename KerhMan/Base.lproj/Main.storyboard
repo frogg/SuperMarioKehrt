@@ -145,13 +145,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" loops="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVf-oq-IjD">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </sceneKitView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewa-73-klD" customClass="SKView">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="368"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="393"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" loops="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVf-oq-IjD">
-                                <rect key="frame" x="0.0" y="368" width="1024" height="400"/>
-                            </sceneKitView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mario_back" translatesAutoresizingMaskIntoConstraints="NO" id="gVO-c3-1As">
                                 <rect key="frame" x="392" y="512" width="240" height="236"/>
                                 <constraints>
@@ -162,16 +162,16 @@
                         </subviews>
                         <color key="backgroundColor" red="0.97082453966140747" green="0.9103049635887146" blue="0.56424099206924438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="LVf-oq-IjD" firstAttribute="bottom" secondItem="qHh-Mt-9TT" secondAttribute="top" id="3oe-VU-CIs"/>
                             <constraint firstAttribute="bottom" secondItem="gVO-c3-1As" secondAttribute="bottom" constant="20" symbolic="YES" id="5Na-Ou-mM7"/>
-                            <constraint firstAttribute="trailing" secondItem="ewa-73-klD" secondAttribute="trailing" id="8E4-dK-AOY"/>
-                            <constraint firstItem="ewa-73-klD" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" id="8cM-f7-QCe"/>
-                            <constraint firstItem="LVf-oq-IjD" firstAttribute="leading" secondItem="ewa-73-klD" secondAttribute="leading" id="H2F-ZB-Vhz"/>
-                            <constraint firstItem="ewa-73-klD" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" id="Mst-HW-Hog"/>
-                            <constraint firstItem="LVf-oq-IjD" firstAttribute="top" secondItem="ewa-73-klD" secondAttribute="bottom" id="UTm-Jz-mz7"/>
-                            <constraint firstItem="LVf-oq-IjD" firstAttribute="trailing" secondItem="ewa-73-klD" secondAttribute="trailing" id="Z4Z-2M-fvC"/>
-                            <constraint firstItem="gVO-c3-1As" firstAttribute="centerX" secondItem="ewa-73-klD" secondAttribute="centerX" id="dim-Nb-dZI"/>
-                            <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="ewa-73-klD" secondAttribute="bottom" constant="400" id="gZy-M9-6cF"/>
+                            <constraint firstItem="LVf-oq-IjD" firstAttribute="bottom" secondItem="qHh-Mt-9TT" secondAttribute="top" id="Aez-71-BXI"/>
+                            <constraint firstAttribute="trailing" secondItem="ewa-73-klD" secondAttribute="trailing" id="U85-QN-PBa"/>
+                            <constraint firstItem="ewa-73-klD" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" id="Xgl-qW-D1P"/>
+                            <constraint firstItem="ewa-73-klD" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" id="a33-Xa-tnF"/>
+                            <constraint firstAttribute="bottom" secondItem="ewa-73-klD" secondAttribute="bottom" constant="375" id="gZF-jA-CbV"/>
+                            <constraint firstItem="ewa-73-klD" firstAttribute="top" secondItem="LVf-oq-IjD" secondAttribute="top" id="ka0-LS-DCB"/>
+                            <constraint firstItem="ewa-73-klD" firstAttribute="centerX" secondItem="gVO-c3-1As" secondAttribute="centerX" id="m8f-44-npb"/>
+                            <constraint firstItem="ewa-73-klD" firstAttribute="leading" secondItem="LVf-oq-IjD" secondAttribute="leading" id="nkn-9Y-ahJ"/>
+                            <constraint firstItem="ewa-73-klD" firstAttribute="trailing" secondItem="LVf-oq-IjD" secondAttribute="trailing" id="uGl-QF-D8d"/>
                         </constraints>
                     </view>
                     <connections>
