@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "Kehrmaschine.h"
+#import "KerhMan-Swift.h"
 
 @interface AppDelegate ()
 
@@ -20,10 +20,18 @@
     // Override point for customization after application launch.
     
     
+<<<<<<< HEAD
     //self.kehrmaschine = [[Kehrmaschine alloc] initWithIpAddress:@"192.168.100.99" withUserName:@"root" withPassword:@"KyQETdMx8xTHAS{R"];
    // [self.kehrmaschine startMonitoringSpeed];
     
     self.socketListener = [[TCPSocketListener alloc] initSocketListenerForPort:4242];
+=======
+   //self.kehrmaschine = [[Kehrmaschine alloc] initWithIpAddress:@"127.0.0.1" withUserName:@"leoMehlig" withPassword:@"poposhour19"];
+    self.kehrmaschine = [[Kehrmaschine alloc] initWithHost:@"192.168.100.99" user:@"root" password:@"KyQETdMx8xTHAS{R"];
+//    self.kehrmaschine = [[Kehrmaschine alloc] initWithIpAddress:@"192.168.100.99" withUserName:@"root" withPassword:@"KyQETdMx8xTHAS{R"];
+    
+//    [self.kehrmaschine startMonitoringSpeed];
+>>>>>>> f792e235a700691fcacc30764d3613cede42c306
     
     return YES;
 }
