@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JVj-cm-ORp">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JVj-cm-ORp">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -169,6 +169,15 @@
                                 <rect key="frame" x="784" y="640" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJb-Ug-cFT">
+                                <rect key="frame" x="0.0" y="747" width="100" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Jpj-p5-Gtz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.97082453966140747" green="0.9103049635887146" blue="0.56424099206924438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -182,6 +191,7 @@
                             <constraint firstItem="ewa-73-klD" firstAttribute="trailing" secondItem="dga-hX-Fsw" secondAttribute="trailing" id="Tye-Zq-Vb2"/>
                             <constraint firstItem="ewa-73-klD" firstAttribute="centerX" secondItem="MZU-Ls-k9U" secondAttribute="centerX" id="Yvt-T8-QvL"/>
                             <constraint firstItem="ewa-73-klD" firstAttribute="trailing" secondItem="LVf-oq-IjD" secondAttribute="trailing" id="Zrd-nq-Deh"/>
+                            <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="EJb-Ug-cFT" secondAttribute="bottom" id="aDF-2R-R4M"/>
                             <constraint firstItem="ewa-73-klD" firstAttribute="top" secondItem="LVf-oq-IjD" secondAttribute="top" id="cWK-HM-1gA"/>
                             <constraint firstAttribute="trailing" secondItem="ewa-73-klD" secondAttribute="trailing" id="cfG-8Q-ofL"/>
                             <constraint firstItem="ewa-73-klD" firstAttribute="leading" secondItem="LVf-oq-IjD" secondAttribute="leading" id="dk0-4u-E3q"/>
@@ -189,6 +199,7 @@
                             <constraint firstItem="dga-hX-Fsw" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" constant="784" id="mOC-Hp-S3c"/>
                             <constraint firstAttribute="bottom" secondItem="gVO-c3-1As" secondAttribute="bottom" constant="20" symbolic="YES" id="mxa-6S-UDY"/>
                             <constraint firstAttribute="bottom" secondItem="ewa-73-klD" secondAttribute="bottom" constant="373" id="vH2-gA-Vhv"/>
+                            <constraint firstItem="EJb-Ug-cFT" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" id="vWQ-aG-fC2"/>
                         </constraints>
                     </view>
                     <connections>
@@ -197,6 +208,7 @@
                         <outlet property="gameCharacter" destination="gVO-c3-1As" id="eeJ-1u-c2q"/>
                         <outlet property="sceneKitView" destination="LVf-oq-IjD" id="lKC-3c-sle"/>
                         <outlet property="skview" destination="ewa-73-klD" id="Wl9-oW-B54"/>
+                        <outlet property="statusLabel" destination="EJb-Ug-cFT" id="G5x-gX-Jtg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>

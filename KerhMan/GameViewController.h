@@ -38,6 +38,7 @@ typedef enum {
 @property CMMotionManager* motionManager;
 @property GameScene* gameScene;
 @property (strong, nonatomic) IBOutlet UIView *colorView;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 
 
 @end

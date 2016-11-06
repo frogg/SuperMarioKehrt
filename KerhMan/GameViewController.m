@@ -203,10 +203,13 @@
 
 -(void)speedChangeTo:(double)to of:(Kehrmaschine *)kehrmaschine {
     self.vehicleSpeed = to;
+    self.statusLabel.text = [NSString stringWithFormat:@"Speed %.2f - Steerin %.2f", self.vehicleSpeed * 100, self.vehicleSteeringAngel * 100];
 }
 
 -(void)steeringAngleChangedTo:(double)to of:(Kehrmaschine *)kehrmaschine {
     self.vehicleSteeringAngel = to;
+    self.statusLabel.text = [NSString stringWithFormat:@"Speed %.2f - Steerin %.2f", self.vehicleSpeed * 100, self.vehicleSteeringAngel * 100];
+
 }
 
 

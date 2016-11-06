@@ -35,8 +35,7 @@ import NMSSH
         super.init()
         self.queue.async {
             self.delegates += [
-                try! CommandDelegate(host: host, user: user, password: password, commands: [.speed, .steeringWheel], callback: self.delegateCallback),
-                //                try! CommandDelegate(host: host, user: user, password: password, command: .direction, callback: self.delegateCallback)
+                try! CommandDelegate(host: host, user: user, password: password, commands: [.steeringWheel, .speed, .steeringWheel], callback: self.delegateCallback),
             ]
             
         }
@@ -50,17 +49,23 @@ import NMSSH
     //ksip.kopf.measurement.42 >> charing cycles
     //ksip.kopf.parameter.45877 >> battery id
     private var commandsStats: [Command : Int] = [:]
+    private lazy var startDate: Date = Date()
+    private var numberStats: [Command : Int] = [:]
+    
     private func delegateCallback(command: Command, result: String) -> Bool {
         DispatchQueue.main.async {
             if !result.contains("error") {
                 print("Command \(command) with result: \(result)")
                 self.commandsStats[command] = (self.commandsStats[command] ?? 0) + 1
+                self.numberStats[command] = (self.numberStats[command] ?? 0) + 1
             } else {
                 self.commandsStats[command] = (self.commandsStats[command] ?? 0) - 1
             }
             
+            print("stat \(command): values per second: \(Double(self.numberStats[command] ?? 1) / self.startDate.timeIntervalSinceNow)")
+            
             for (command, state) in self.commandsStats {
-                print("state \(command) = \(state)")
+                print("stat \(command) = \(state)")
             }
             
             switch command {
@@ -75,7 +80,18 @@ import NMSSH
             default: break
             }
         }
-        return true
+        switch command {
+        case .speed:
+            if let number = Double(result) {
+                return true
+            }
+        case .steeringWheel:
+            if let number = Double(result) {
+                return true
+            }
+        default: break
+        }
+        return false
     }
     
     
@@ -114,7 +130,6 @@ import NMSSH
                 self.nextCommandIndex = 0
             }
             try self.session.channel.write("tcuclient -c 'var read \(self.commands[self.nextCommandIndex].rawValue)'\n")
-            self.nextCommandIndex += 1
         }
         
         
@@ -123,11 +138,12 @@ import NMSSH
                 let string = self.output.replacingOccurrences(of: "\r", with: " ").replacingOccurrences(of: "\n", with: " ")
                 if let match = CommandDelegate.regex.firstMatch(in: string, options: [], range: NSMakeRange(0, (string as NSString).length)), match.numberOfRanges == 2 {
                     let result = (string as NSString).substring(with: match.rangeAt(1))
-                    if !result.replacingOccurrences(of: " ", with: "").isEmpty && self.callback(self.commands[self.nextCommandIndex - 1], result) {
-                        print("Result: \(result)")
-                        self.output = ""
-                        try! self.sendCommand()
+                    if self.callback(self.commands[self.nextCommandIndex], result) {
+                        self.nextCommandIndex += 1
                     }
+                    print("Result: \(result)")
+                    self.output = ""
+                    try! self.sendCommand()
                 }
             }
         }
