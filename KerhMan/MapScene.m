@@ -48,13 +48,8 @@
     return self;
 }
 
--(void) moveLeft {
-    SCNAction* move = [SCNAction rotateByAngle:animationLength*2*gameSpeed*0.25f aroundAxis:SCNVector3Make(0, 1, 0) duration:animationLength];
-    [self.cameraNode runAction:move];
-}
-
--(void) moveRight {
-    SCNAction* move = [SCNAction rotateByAngle:animationLength*2*gameSpeed*-0.25f aroundAxis:SCNVector3Make(0, 1, 0) duration:animationLength];
+-(void)steerWithSteeringAnghel:(double) steeringAngel {
+    SCNAction* move = [SCNAction rotateByAngle:steeringAngel*animationLength*2*gameSpeed*0.25f aroundAxis:SCNVector3Make(0, 1, 0) duration:animationLength];
     [self.cameraNode runAction:move];
 }
 
