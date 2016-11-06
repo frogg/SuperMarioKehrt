@@ -10,6 +10,7 @@
 #import <SpriteKit/SpriteKit.h>
 #import <GameplayKit/GameplayKit.h>
 #import "MapScene.h"
+#import "GameScene.h"
 @import SceneKit;
 @import CoreMotion;
 
@@ -31,6 +32,7 @@ typedef enum {
 @property DrivingDirection lastDrivingDirection;
 @property (strong, nonatomic) IBOutlet UIImageView *ampelmaennchen;
 @property CMMotionManager* motionManager;
+@property GameScene* gameScene;
 
 
 @end
