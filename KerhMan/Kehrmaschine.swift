@@ -26,6 +26,9 @@ import NMSSH
     
     let queue: DispatchQueue = DispatchQueue(label: "com.mariokehrt.ssh")
     private var delegates: [CommandDelegate] = []
+    
+    
+    public weak var delegate: KehrmaschineDelegate?
     public init(host: String, user: String, password: String) {
         super.init()
         self.queue.async {
@@ -57,6 +60,18 @@ import NMSSH
             
             for (command, state) in self.commandsStats {
                 print("state \(command) = \(state)")
+            }
+            
+            switch command {
+            case .speed:
+                if let number = Double(result) {
+                    self.delegate?.speedChange(to: max(0, number - 1) / 100, of: self)
+                }
+            case .steeringWheel:
+                if let number = Double(result) {
+                    self.delegate?.speedChange(to:  (number - 100) / 90, of: self)
+                }
+            default: break
             }
         }
         return true
