@@ -11,8 +11,11 @@
 #import <GameplayKit/GameplayKit.h>
 #import "MapScene.h"
 #import "GameScene.h"
+#import "KerhMan-Swift.h"
+
 @import SceneKit;
 @import CoreMotion;
+
 
 typedef enum {
     DrivingDirectionForward,
@@ -21,7 +24,8 @@ typedef enum {
 } DrivingDirection;
 
 
-@interface GameViewController : UIViewController<UIAccelerometerDelegate>
+@interface GameViewController : UIViewController<UIAccelerometerDelegate,KehrmaschineDelegate>
+
 @property (strong, nonatomic) IBOutlet SKView *skview;
 @property (strong, nonatomic) IBOutlet SCNView *sceneKitView;
 @property (strong, nonatomic) IBOutlet UIImageView *gameCharacter;
@@ -33,6 +37,7 @@ typedef enum {
 @property (strong, nonatomic) IBOutlet UIImageView *ampelmaennchen;
 @property CMMotionManager* motionManager;
 @property GameScene* gameScene;
+@property (strong, nonatomic) IBOutlet UIView *colorView;
 
 
 @end

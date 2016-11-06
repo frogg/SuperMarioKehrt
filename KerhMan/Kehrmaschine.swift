@@ -16,6 +16,8 @@ import NMSSH
 
 @objc public class Kehrmaschine: NSObject {
     
+    public static let shared = Kehrmaschine(host: "192.168.100.99", user: "root", password: "KyQETdMx8xTHAS{R")
+    
     enum Command: String {
         case position = "tcu.lastpos2"
         case steeringWheel = "ksip.kopf.measurement.39"

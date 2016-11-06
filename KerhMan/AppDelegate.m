@@ -20,7 +20,8 @@
     // Override point for customization after application launch.
     
     self.socketListener = [[TCPSocketListener alloc] initSocketListenerForPort:4242];
-    self.kehrmaschine = [[Kehrmaschine alloc] initWithHost:@"192.168.100.99" user:@"root" password:@"KyQETdMx8xTHAS{R"];
+    
+    [Kehrmaschine shared];
 
     
     return YES;

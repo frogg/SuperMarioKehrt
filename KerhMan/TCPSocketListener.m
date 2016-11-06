@@ -67,7 +67,7 @@
     }
     
     [sock writeData:[@"FAMOS" dataUsingEncoding:NSUTF8StringEncoding] withTimeout:10 tag:1];
-    
+    [sock readDataWithTimeout:10 tag:1];
     
 }
 

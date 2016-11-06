@@ -67,7 +67,7 @@
     
     SCNAction* move = [SCNAction moveByX:xMovement y:0 z:yMovement duration:0.5];
     [self.cameraNode runAction:move];
-   // [self currentPositionWithYMovement:yMovement xMovement:xMovement];
+    [self currentPositionWithYMovement:yMovement xMovement:xMovement];
     
 }
 
@@ -90,6 +90,7 @@
     UIGraphicsEndImageContext();
     
     UIColor* color = [self colorInPixel:floorImage xCoordinate:x yCoordinate:y];
+    self.currentFloorColor = color;
     CGFloat red, green, blue;
     [color getRed:&red green:&green blue:&blue alpha:nil];
     CGFloat minColor = MIN(MIN(red, green), blue) * 255;
@@ -97,9 +98,10 @@
 
     if (minColor > 50 && maxColor < 200 && (maxColor - minColor) < 50) {
         NSLog(@"Is street");
+        self.isOffroad = false;
     } else {
         NSLog(@"Isn't street");
-
+        self.isOffroad = true;
     }
     
 }
@@ -109,7 +111,8 @@
     CFDataRef pixelData = CGDataProviderCopyData(CGImageGetDataProvider(image.CGImage));
     const UInt8* data = CFDataGetBytePtr(pixelData);
     
-    int pixelInfo = ((image.size.width  * y) + x - 1) * 4; // The image is png
+    int pixelInfo = MAX(((image.size.width  * y) + x - 1) * 4,0); // The image is png
+    
     
     UInt8 red = data[pixelInfo];         // If you need this info, enable it
     UInt8 green = data[(pixelInfo + 1)]; // If you need this info, enable it

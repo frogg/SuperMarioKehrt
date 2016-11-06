@@ -155,36 +155,45 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ampel_0" translatesAutoresizingMaskIntoConstraints="NO" id="MZU-Ls-k9U">
                                 <rect key="frame" x="392" y="100" width="240" height="206"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="206" id="3jD-5C-GQE"/>
-                                    <constraint firstAttribute="width" constant="240" id="AaR-Ah-Da9"/>
+                                    <constraint firstAttribute="width" constant="240" id="AY2-ro-MAD"/>
+                                    <constraint firstAttribute="height" constant="206" id="N3e-E5-PD5"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mario_back" translatesAutoresizingMaskIntoConstraints="NO" id="gVO-c3-1As">
                                 <rect key="frame" x="392" y="512" width="240" height="236"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="236" id="49K-eb-JBz"/>
+                                    <constraint firstAttribute="height" constant="236" id="YjB-O8-DpT"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dga-hX-Fsw">
+                                <rect key="frame" x="784" y="640" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.97082453966140747" green="0.9103049635887146" blue="0.56424099206924438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ewa-73-klD" firstAttribute="centerX" secondItem="MZU-Ls-k9U" secondAttribute="centerX" id="0kj-br-9G9"/>
-                            <constraint firstItem="LVf-oq-IjD" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" id="2de-3y-1dA"/>
-                            <constraint firstItem="LVf-oq-IjD" firstAttribute="top" secondItem="ewa-73-klD" secondAttribute="top" id="4PF-zc-4yp"/>
-                            <constraint firstItem="ewa-73-klD" firstAttribute="trailing" secondItem="LVf-oq-IjD" secondAttribute="trailing" id="5hw-Ex-BnV"/>
-                            <constraint firstItem="ewa-73-klD" firstAttribute="leading" secondItem="LVf-oq-IjD" secondAttribute="leading" id="5pj-Va-tmr"/>
-                            <constraint firstItem="ewa-73-klD" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" id="AiY-bx-ZAG"/>
-                            <constraint firstItem="MZU-Ls-k9U" firstAttribute="leading" secondItem="gVO-c3-1As" secondAttribute="leading" id="BPs-CU-Vwh"/>
-                            <constraint firstAttribute="bottom" secondItem="gVO-c3-1As" secondAttribute="bottom" constant="20" symbolic="YES" id="FHP-aF-6In"/>
-                            <constraint firstAttribute="trailing" secondItem="LVf-oq-IjD" secondAttribute="trailing" id="Yyt-v9-4yM"/>
-                            <constraint firstItem="LVf-oq-IjD" firstAttribute="bottom" secondItem="qHh-Mt-9TT" secondAttribute="top" id="Z1Y-ul-Z3x"/>
-                            <constraint firstAttribute="bottom" secondItem="ewa-73-klD" secondAttribute="bottom" constant="375" id="pfp-kG-U2O"/>
-                            <constraint firstItem="MZU-Ls-k9U" firstAttribute="top" secondItem="8aa-yV-Osq" secondAttribute="bottom" constant="80" id="rRA-vd-H89"/>
-                            <constraint firstItem="MZU-Ls-k9U" firstAttribute="trailing" secondItem="gVO-c3-1As" secondAttribute="trailing" id="xZA-VQ-9kL"/>
+                            <constraint firstAttribute="bottom" secondItem="gVO-c3-1As" secondAttribute="bottom" constant="20" symbolic="YES" id="5eL-Y2-x3Q"/>
+                            <constraint firstItem="ewa-73-klD" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" id="6NR-MI-hQ2"/>
+                            <constraint firstItem="ewa-73-klD" firstAttribute="leading" secondItem="LVf-oq-IjD" secondAttribute="leading" id="6yj-cO-7hf"/>
+                            <constraint firstItem="LVf-oq-IjD" firstAttribute="trailing" secondItem="ewa-73-klD" secondAttribute="trailing" id="Cpw-Do-0i1"/>
+                            <constraint firstItem="LVf-oq-IjD" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" id="DC4-KA-3Hj"/>
+                            <constraint firstItem="ewa-73-klD" firstAttribute="centerX" secondItem="MZU-Ls-k9U" secondAttribute="centerX" id="G3o-mm-mRh"/>
+                            <constraint firstItem="MZU-Ls-k9U" firstAttribute="top" secondItem="8aa-yV-Osq" secondAttribute="bottom" constant="80" id="JdY-U6-8d8"/>
+                            <constraint firstItem="dga-hX-Fsw" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" constant="784" id="Nup-Gw-q72"/>
+                            <constraint firstItem="dga-hX-Fsw" firstAttribute="bottom" secondItem="qHh-Mt-9TT" secondAttribute="top" id="Oex-uj-nAb"/>
+                            <constraint firstItem="LVf-oq-IjD" firstAttribute="top" secondItem="ewa-73-klD" secondAttribute="top" id="PZw-Ux-37P"/>
+                            <constraint firstItem="MZU-Ls-k9U" firstAttribute="trailing" secondItem="gVO-c3-1As" secondAttribute="trailing" id="RFb-8u-jwA"/>
+                            <constraint firstItem="MZU-Ls-k9U" firstAttribute="leading" secondItem="gVO-c3-1As" secondAttribute="leading" id="WN3-zd-48Z"/>
+                            <constraint firstAttribute="trailing" secondItem="ewa-73-klD" secondAttribute="trailing" id="Wus-Sv-SCD"/>
+                            <constraint firstAttribute="bottom" secondItem="ewa-73-klD" secondAttribute="bottom" constant="375" id="Xcd-Lo-Hb6"/>
+                            <constraint firstItem="LVf-oq-IjD" firstAttribute="trailing" secondItem="dga-hX-Fsw" secondAttribute="trailing" id="eEt-23-fSx"/>
+                            <constraint firstItem="dga-hX-Fsw" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" constant="640" id="l6K-YH-3I2"/>
+                            <constraint firstItem="LVf-oq-IjD" firstAttribute="bottom" secondItem="qHh-Mt-9TT" secondAttribute="top" id="rYd-cw-Iqi"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="ampelmaennchen" destination="MZU-Ls-k9U" id="B1r-4O-p7x"/>
+                        <outlet property="colorView" destination="dga-hX-Fsw" id="Zfh-pB-3GH"/>
                         <outlet property="gameCharacter" destination="gVO-c3-1As" id="eeJ-1u-c2q"/>
                         <outlet property="sceneKitView" destination="LVf-oq-IjD" id="lKC-3c-sle"/>
                         <outlet property="skview" destination="ewa-73-klD" id="Wl9-oW-B54"/>
@@ -229,7 +238,7 @@
     </scenes>
     <resources>
         <image name="Super Mario Kehrt" width="3004" height="996"/>
-        <image name="ampel_0" width="49" height="48"/>
+        <image name="ampel_0" width="35" height="39"/>
         <image name="mario_back" width="32" height="32"/>
         <image name="select_luigi" width="48" height="48"/>
         <image name="select_mario" width="48" height="48"/>

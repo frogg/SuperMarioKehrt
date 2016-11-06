@@ -12,6 +12,14 @@
 #import "MapScene.h"
 #import "AMGSoundManager.h"
 #import "AMGAudioPlayer.h"
+
+@import CoreGraphics;
+
+
+#define RADIANS(degrees) ((degrees * M_PI) / 180.0)
+
+
+
 @implementation GameViewController
 
 
@@ -42,6 +50,8 @@
          CGFloat y = motion.gravity.y;
          CGFloat z = motion.gravity.z;
      }];
+    
+    //[Kehrmaschine shared].dele
     
     
 }
@@ -87,6 +97,26 @@
     
     
     [NSTimer scheduledTimerWithTimeInterval:animationLength repeats:YES block:^(NSTimer * _Nonnull timer) {
+        
+        
+        if(self.mapScene.isOffroad) {
+            self.gameCharacter.transform = CGAffineTransformRotate(CGAffineTransformIdentity, RADIANS(-5.0));
+            
+            [UIView beginAnimations:@"wobble" context:(__bridge void * _Nullable)(self.gameCharacter)];
+            [UIView setAnimationRepeatAutoreverses:YES]; // important
+            [UIView setAnimationRepeatCount:2];
+            [UIView setAnimationDuration:animationLength/2];
+            [UIView setAnimationDelegate:self];
+            [UIView setAnimationDidStopSelector:@selector(wobbleEnded:finished:context:)];
+            
+            self.gameCharacter.transform = CGAffineTransformRotate(CGAffineTransformIdentity, RADIANS(5.0));
+            
+            [UIView commitAnimations];
+
+        }
+        
+        self.colorView.backgroundColor = self.mapScene.currentFloorColor;
+        
         AMGSoundManager* soundManager = [AMGSoundManager sharedManager];
         
         if([self currentDrivingDirection] == DrivingDirectionLeft) {
@@ -162,6 +192,14 @@
 
 - (BOOL)prefersStatusBarHidden {
     return YES;
+}
+
+- (void) wobbleEnded:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context
+{
+    if ([finished boolValue]) {
+        UIView* item = (__bridge UIView *)context;
+        item.transform = CGAffineTransformIdentity;
+    }
 }
 
 

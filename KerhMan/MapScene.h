@@ -15,6 +15,9 @@
 }
 
 @property SCNNode* cameraNode;
+@property UIColor* currentFloorColor;
+@property bool isOffroad;
+
 -(void) moveForwardWithSpeed:(double) speed;
 -(void) steerWithSteeringAnghel:(double) steeringAngel;
 
