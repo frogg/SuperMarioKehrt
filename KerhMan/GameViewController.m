@@ -30,7 +30,7 @@
     self.vehicleSpeed = 0;
     
     AMGSoundManager* soundManager = [AMGSoundManager sharedManager];
-    [soundManager playAudio:[[NSBundle mainBundle] pathForResource:@"driving-theme" ofType:@"mp3"] withName:@"driving-theme" inLine:@"music" withVolume:1 andRepeatCount:0 fadeDuration:0 withCompletitionHandler:nil];
+    [soundManager playAudio:[[NSBundle mainBundle] pathForResource:@"driving-theme" ofType:@"mp3"] withName:@"driving-theme" inLine:@"music" withVolume:0.8 andRepeatCount:-1 fadeDuration:0 withCompletitionHandler:nil];
     
     self.ampelmaennchen.layer.magnificationFilter = kCAFilterNearest;
     [self startAmpelmaennchen];
@@ -90,7 +90,7 @@
     
     
     AMGSoundManager* _soundManager = [AMGSoundManager sharedManager];
-    [_soundManager playAudio:[[NSBundle mainBundle] pathForResource:@"driving" ofType:@"mp3"] withName:@"driving" inLine:@"driving" withVolume:1 andRepeatCount:-1 fadeDuration:0 withCompletitionHandler:nil];
+    [_soundManager playAudio:[[NSBundle mainBundle] pathForResource:@"driving" ofType:@"mp3"] withName:@"driving" inLine:@"driving" withVolume:0.5 andRepeatCount:-1 fadeDuration:0 withCompletitionHandler:nil];
     
     
     [NSTimer scheduledTimerWithTimeInterval:animationLength repeats:YES block:^(NSTimer * _Nonnull timer) {
@@ -136,9 +136,9 @@
         
         if ([self currentDrivingDirection] != DrivingDirectionForward && ![soundManager isAudioPlayingInLine:@"drifting"] && [self currentDrivingDirection] != self.lastDrivingDirection) {
             [soundManager playAudio:[[NSBundle mainBundle] pathForResource:@"drifting" ofType:@"mp3"] withName:@"right" inLine:@"drifting" withVolume:1 andRepeatCount:0 fadeDuration:0 withCompletitionHandler:nil];
-            [soundManager setVolume:0.3 forLine:@"driving" withFadeDuration:1];
+            [soundManager setVolume:0.5 forLine:@"driving" withFadeDuration:1];
             [NSTimer scheduledTimerWithTimeInterval:2 repeats:NO block:^(NSTimer * _Nonnull timer) {
-                [soundManager setVolume:1 forLine:@"driving" withFadeDuration:1];
+                [soundManager setVolume:0.5 forLine:@"driving" withFadeDuration:1];
             }];
         }
         self.lastDrivingDirection = [self currentDrivingDirection];
