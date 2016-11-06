@@ -11,6 +11,7 @@
 #import <GameplayKit/GameplayKit.h>
 #import "MapScene.h"
 @import SceneKit;
+@import CoreMotion;
 
 typedef enum {
     DrivingDirectionForward,
@@ -19,7 +20,7 @@ typedef enum {
 } DrivingDirection;
 
 
-@interface GameViewController : UIViewController
+@interface GameViewController : UIViewController<UIAccelerometerDelegate>
 @property (strong, nonatomic) IBOutlet SKView *skview;
 @property (strong, nonatomic) IBOutlet SCNView *sceneKitView;
 @property (strong, nonatomic) IBOutlet UIImageView *gameCharacter;
@@ -29,6 +30,7 @@ typedef enum {
 @property NSString* driverName;
 @property DrivingDirection lastDrivingDirection;
 @property (strong, nonatomic) IBOutlet UIImageView *ampelmaennchen;
+@property CMMotionManager* motionManager;
 
 
 @end

@@ -26,6 +26,24 @@
     
     self.ampelmaennchen.layer.magnificationFilter = kCAFilterNearest;
     [self startAmpelmaennchen];
+    
+    self.motionManager = [[CMMotionManager alloc] init];
+    
+    
+    
+    [self.motionManager setDeviceMotionUpdateInterval:animationLength / 2.f];
+    
+    [self.motionManager startDeviceMotionUpdatesUsingReferenceFrame:CMAttitudeReferenceFrameXArbitraryZVertical
+                                                            toQueue:[NSOperationQueue mainQueue]
+                                                        withHandler:^(CMDeviceMotion *motion, NSError *error)
+     {
+         self.vehicleSteeringAngel = motion.gravity.y;
+         CGFloat x = motion.gravity.x;
+         CGFloat y = motion.gravity.y;
+         CGFloat z = motion.gravity.z;
+     }];
+    
+    
 }
 
 -(void) startAmpelmaennchen {
@@ -66,7 +84,7 @@
     
     AMGSoundManager* _soundManager = [AMGSoundManager sharedManager];
     [_soundManager playAudio:[[NSBundle mainBundle] pathForResource:@"driving" ofType:@"mp3"] withName:@"driving" inLine:@"driving" withVolume:1 andRepeatCount:-1 fadeDuration:0 withCompletitionHandler:nil];
-
+    
     
     
     [NSTimer scheduledTimerWithTimeInterval:animationLength repeats:YES block:^(NSTimer * _Nonnull timer) {
@@ -100,7 +118,7 @@
         self.lastDrivingDirection = [self currentDrivingDirection];
     }];
     
-
+    
     
 }
 
@@ -137,11 +155,7 @@
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return UIInterfaceOrientationMaskAllButUpsideDown;
-    } else {
-        return UIInterfaceOrientationMaskAll;
-    }
+        return UIInterfaceOrientationMaskLandscape;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -152,5 +166,7 @@
 - (BOOL)prefersStatusBarHidden {
     return YES;
 }
+
+
 
 @end
