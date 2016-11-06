@@ -45,7 +45,9 @@
                                                             toQueue:[NSOperationQueue mainQueue]
                                                         withHandler:^(CMDeviceMotion *motion, NSError *error)
      {
-         //self.vehicleSteeringAngel = motion.gravity.y;
+         if(!useMachineInput) {
+             self.vehicleSteeringAngel = motion.gravity.y;
+         }
      }];
     
     [Kehrmaschine shared].delegate = self;
@@ -65,7 +67,9 @@
                     self.ampelmaennchen.alpha = 0;
                 }];
                 
-                //self.vehicleSpeed = 1;
+                if(!useMachineInput) {
+                    self.vehicleSpeed = 1;
+                }
             }];
         }];
     }];
@@ -109,7 +113,7 @@
             self.gameCharacter.transform = CGAffineTransformRotate(CGAffineTransformIdentity, RADIANS(5.0));
             
             [UIView commitAnimations];
-
+            
         }
         
         self.colorView.backgroundColor = self.mapScene.currentFloorColor;
@@ -143,7 +147,7 @@
         }
         self.lastDrivingDirection = [self currentDrivingDirection];
     }];
-
+    
     
     
 }
@@ -180,7 +184,7 @@
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-        return UIInterfaceOrientationMaskLandscape;
+    return UIInterfaceOrientationMaskLandscape;
 }
 
 - (void)didReceiveMemoryWarning {
