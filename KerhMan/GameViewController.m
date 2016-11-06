@@ -45,13 +45,10 @@
                                                             toQueue:[NSOperationQueue mainQueue]
                                                         withHandler:^(CMDeviceMotion *motion, NSError *error)
      {
-         self.vehicleSteeringAngel = motion.gravity.y;
-         CGFloat x = motion.gravity.x;
-         CGFloat y = motion.gravity.y;
-         CGFloat z = motion.gravity.z;
+         //self.vehicleSteeringAngel = motion.gravity.y;
      }];
     
-    //[Kehrmaschine shared].dele
+    [Kehrmaschine shared].delegate = self;
     
     
 }
@@ -68,7 +65,7 @@
                     self.ampelmaennchen.alpha = 0;
                 }];
                 
-                self.vehicleSpeed = 1;
+                //self.vehicleSpeed = 1;
             }];
         }];
     }];
@@ -133,6 +130,7 @@
             
         } else if([self currentDrivingDirection] == DrivingDirectionForward) {
             self.gameCharacter.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@_back",self.driverName]];
+            [self.mapScene steerWithSteeringAnghel:self.vehicleSteeringAngel];
             [self.mapScene moveForwardWithSpeed:self.vehicleSpeed];
         }
         
@@ -202,6 +200,14 @@
     }
 }
 
+
+-(void)speedChangeTo:(double)to of:(Kehrmaschine *)kehrmaschine {
+    self.vehicleSpeed = to;
+}
+
+-(void)steeringAngleChangedTo:(double)to of:(Kehrmaschine *)kehrmaschine {
+    self.vehicleSteeringAngel = to;
+}
 
 
 @end

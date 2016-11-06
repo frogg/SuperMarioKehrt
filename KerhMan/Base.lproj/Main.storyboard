@@ -149,46 +149,46 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             </sceneKitView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewa-73-klD" customClass="SKView">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="393"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="395"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ampel_0" translatesAutoresizingMaskIntoConstraints="NO" id="MZU-Ls-k9U">
                                 <rect key="frame" x="392" y="100" width="240" height="206"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="AY2-ro-MAD"/>
-                                    <constraint firstAttribute="height" constant="206" id="N3e-E5-PD5"/>
+                                    <constraint firstAttribute="width" constant="240" id="3Gf-yw-ZLL"/>
+                                    <constraint firstAttribute="height" constant="206" id="B5C-jj-aEe"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mario_back" translatesAutoresizingMaskIntoConstraints="NO" id="gVO-c3-1As">
                                 <rect key="frame" x="392" y="512" width="240" height="236"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="236" id="YjB-O8-DpT"/>
+                                    <constraint firstAttribute="height" constant="236" id="KEM-ao-s2v"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dga-hX-Fsw">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dga-hX-Fsw">
                                 <rect key="frame" x="784" y="640" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.97082453966140747" green="0.9103049635887146" blue="0.56424099206924438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="gVO-c3-1As" secondAttribute="bottom" constant="20" symbolic="YES" id="5eL-Y2-x3Q"/>
-                            <constraint firstItem="ewa-73-klD" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" id="6NR-MI-hQ2"/>
-                            <constraint firstItem="ewa-73-klD" firstAttribute="leading" secondItem="LVf-oq-IjD" secondAttribute="leading" id="6yj-cO-7hf"/>
-                            <constraint firstItem="LVf-oq-IjD" firstAttribute="trailing" secondItem="ewa-73-klD" secondAttribute="trailing" id="Cpw-Do-0i1"/>
-                            <constraint firstItem="LVf-oq-IjD" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" id="DC4-KA-3Hj"/>
-                            <constraint firstItem="ewa-73-klD" firstAttribute="centerX" secondItem="MZU-Ls-k9U" secondAttribute="centerX" id="G3o-mm-mRh"/>
-                            <constraint firstItem="MZU-Ls-k9U" firstAttribute="top" secondItem="8aa-yV-Osq" secondAttribute="bottom" constant="80" id="JdY-U6-8d8"/>
-                            <constraint firstItem="dga-hX-Fsw" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" constant="784" id="Nup-Gw-q72"/>
-                            <constraint firstItem="dga-hX-Fsw" firstAttribute="bottom" secondItem="qHh-Mt-9TT" secondAttribute="top" id="Oex-uj-nAb"/>
-                            <constraint firstItem="LVf-oq-IjD" firstAttribute="top" secondItem="ewa-73-klD" secondAttribute="top" id="PZw-Ux-37P"/>
-                            <constraint firstItem="MZU-Ls-k9U" firstAttribute="trailing" secondItem="gVO-c3-1As" secondAttribute="trailing" id="RFb-8u-jwA"/>
-                            <constraint firstItem="MZU-Ls-k9U" firstAttribute="leading" secondItem="gVO-c3-1As" secondAttribute="leading" id="WN3-zd-48Z"/>
-                            <constraint firstAttribute="trailing" secondItem="ewa-73-klD" secondAttribute="trailing" id="Wus-Sv-SCD"/>
-                            <constraint firstAttribute="bottom" secondItem="ewa-73-klD" secondAttribute="bottom" constant="375" id="Xcd-Lo-Hb6"/>
-                            <constraint firstItem="LVf-oq-IjD" firstAttribute="trailing" secondItem="dga-hX-Fsw" secondAttribute="trailing" id="eEt-23-fSx"/>
-                            <constraint firstItem="dga-hX-Fsw" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" constant="640" id="l6K-YH-3I2"/>
-                            <constraint firstItem="LVf-oq-IjD" firstAttribute="bottom" secondItem="qHh-Mt-9TT" secondAttribute="top" id="rYd-cw-Iqi"/>
+                            <constraint firstItem="MZU-Ls-k9U" firstAttribute="top" secondItem="8aa-yV-Osq" secondAttribute="bottom" constant="80" id="0Fu-ZG-1lr"/>
+                            <constraint firstItem="MZU-Ls-k9U" firstAttribute="trailing" secondItem="gVO-c3-1As" secondAttribute="trailing" id="1yf-Aa-UMJ"/>
+                            <constraint firstItem="dga-hX-Fsw" firstAttribute="bottom" secondItem="qHh-Mt-9TT" secondAttribute="top" id="5tg-Wd-4Qc"/>
+                            <constraint firstItem="LVf-oq-IjD" firstAttribute="bottom" secondItem="qHh-Mt-9TT" secondAttribute="top" id="7x6-jW-NK5"/>
+                            <constraint firstItem="ewa-73-klD" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" id="OmB-Wq-Uhc"/>
+                            <constraint firstItem="ewa-73-klD" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" id="Oqp-G8-eb3"/>
+                            <constraint firstItem="dga-hX-Fsw" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" constant="640" id="Tmx-te-0Up"/>
+                            <constraint firstItem="ewa-73-klD" firstAttribute="trailing" secondItem="dga-hX-Fsw" secondAttribute="trailing" id="Tye-Zq-Vb2"/>
+                            <constraint firstItem="ewa-73-klD" firstAttribute="centerX" secondItem="MZU-Ls-k9U" secondAttribute="centerX" id="Yvt-T8-QvL"/>
+                            <constraint firstItem="ewa-73-klD" firstAttribute="trailing" secondItem="LVf-oq-IjD" secondAttribute="trailing" id="Zrd-nq-Deh"/>
+                            <constraint firstItem="ewa-73-klD" firstAttribute="top" secondItem="LVf-oq-IjD" secondAttribute="top" id="cWK-HM-1gA"/>
+                            <constraint firstAttribute="trailing" secondItem="ewa-73-klD" secondAttribute="trailing" id="cfG-8Q-ofL"/>
+                            <constraint firstItem="ewa-73-klD" firstAttribute="leading" secondItem="LVf-oq-IjD" secondAttribute="leading" id="dk0-4u-E3q"/>
+                            <constraint firstItem="MZU-Ls-k9U" firstAttribute="leading" secondItem="gVO-c3-1As" secondAttribute="leading" id="kFN-5z-y0S"/>
+                            <constraint firstItem="dga-hX-Fsw" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" constant="784" id="mOC-Hp-S3c"/>
+                            <constraint firstAttribute="bottom" secondItem="gVO-c3-1As" secondAttribute="bottom" constant="20" symbolic="YES" id="mxa-6S-UDY"/>
+                            <constraint firstAttribute="bottom" secondItem="ewa-73-klD" secondAttribute="bottom" constant="373" id="vH2-gA-Vhv"/>
                         </constraints>
                     </view>
                     <connections>

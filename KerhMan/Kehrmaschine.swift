@@ -35,7 +35,6 @@ import NMSSH
         super.init()
         self.queue.async {
             self.delegates += [
-                //                try! CommandDelegate(host: host, user: user, password: password, command: .steeringWheel, callback: self.delegateCallback),
                 try! CommandDelegate(host: host, user: user, password: password, commands: [.speed, .steeringWheel], callback: self.delegateCallback),
                 //                try! CommandDelegate(host: host, user: user, password: password, command: .direction, callback: self.delegateCallback)
             ]
@@ -71,7 +70,7 @@ import NMSSH
                 }
             case .steeringWheel:
                 if let number = Double(result) {
-                    self.delegate?.speedChange(to:  (number - 100) / 90, of: self)
+                    self.delegate?.steeringAngleChanged(to:  -(number - 100) / 90, of: self)
                 }
             default: break
             }

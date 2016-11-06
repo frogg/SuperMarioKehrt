@@ -24,7 +24,10 @@
         
         self.cameraNode = [SCNNode node];
         self.cameraNode.camera = camera;
-        self.cameraNode.position = SCNVector3Make(0, 0, 0);
+        
+        //start position
+        self.cameraNode.position = SCNVector3Make(-10, 0, -39);
+        self.cameraNode.rotation = SCNVector4Make(0, 1, 0, 0.000977);
         [self.rootNode addChildNode:self.cameraNode];
         
 
@@ -59,6 +62,8 @@
     
     
     double yangle = self.cameraNode.rotation.y * self.cameraNode.rotation.w;
+    
+    NSLog(@"ry: %f, rw: %f, x: %f, z: %f",self.cameraNode.rotation.y,self.cameraNode.rotation.w,self.cameraNode.position.x,self.cameraNode.position.z);
     
     
     double yMovement = -cos(yangle) * gameSpeed * animationLength*2 *speed;
