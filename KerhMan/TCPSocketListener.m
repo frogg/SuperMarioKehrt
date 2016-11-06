@@ -41,7 +41,7 @@
         newSocket.delegate = self;
         NSLog(@"New Socket Connection");
         
-        [newSocket readDataWithTimeout:10 tag:1];
+        [newSocket readDataWithTimeout:-1 tag:1];
         
     }
 }
@@ -55,10 +55,10 @@
     
     if([components count] == 4) {
         
-        double x_val = [[components objectAtIndex:0] intValue];
-        double y_val = [[components objectAtIndex:1] intValue];
-        double z_val = [[components objectAtIndex:2] intValue];
-        double dist = [[components objectAtIndex:3] intValue];
+        double x_val = [[components objectAtIndex:0] doubleValue];
+        double y_val = [[components objectAtIndex:1] doubleValue];
+        double z_val = [[components objectAtIndex:2] doubleValue];
+        double dist = [[components objectAtIndex:3] doubleValue];
         
         NSLog(@"Received Values: x: %f, y: %f, z: %f, dist: %f",x_val, y_val, z_val, dist);
         
@@ -67,7 +67,7 @@
     }
     
     [sock writeData:[@"FAMOS" dataUsingEncoding:NSUTF8StringEncoding] withTimeout:10 tag:1];
-    [sock readDataWithTimeout:10 tag:1];
+    [sock readDataWithTimeout:-1 tag:1];
     
 }
 
