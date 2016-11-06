@@ -23,6 +23,7 @@
     
     [Kehrmaschine shared];
 
+    [UIApplication sharedApplication].idleTimerDisabled = YES;
     
     return YES;
 }

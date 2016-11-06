@@ -70,7 +70,7 @@ import NMSSH
                 }
             case .steeringWheel:
                 if let number = Double(result) {
-                    self.delegate?.steeringAngleChanged(to:  -(number - 100) / 90, of: self)
+                    self.delegate?.steeringAngleChanged(to:  -2*((number - 100) / 90), of: self)
                 }
             default: break
             }

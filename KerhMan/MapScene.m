@@ -100,8 +100,14 @@
     [color getRed:&red green:&green blue:&blue alpha:nil];
     CGFloat minColor = MIN(MIN(red, green), blue) * 255;
     CGFloat maxColor = MAX(MAX(red, green), blue) * 255;
+    
+    
+    
+    
+    
+    
 
-    if (minColor > 50 && maxColor < 200 && (maxColor - minColor) < 50) {
+    if ((maxColor - minColor) < 50) {
         NSLog(@"Is street");
         self.isOffroad = false;
     } else {

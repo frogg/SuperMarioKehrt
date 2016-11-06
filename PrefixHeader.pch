@@ -10,9 +10,9 @@
 #define PrefixHeader_pch
 
 
-#define gameSpeed 3
+#define gameSpeed 9
 #define animationLength 0.1
-#define useMachineInput true
+#define useMachineInput false
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.

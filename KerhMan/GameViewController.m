@@ -52,7 +52,20 @@
     
     [Kehrmaschine shared].delegate = self;
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(wallWarning) name:@"WallWarning" object:nil];
     
+}
+
+-(void) wallWarning {
+    self.wallWarningLabel.alpha = 1;
+    
+    [NSTimer scheduledTimerWithTimeInterval:3 repeats:NO block:^(NSTimer * _Nonnull timer) {
+        
+        [UIView animateWithDuration:1 animations:^{
+            self.wallWarningLabel.alpha=0;
+        }];
+        
+    }];
 }
 
 -(void) startAmpelmaennchen {
@@ -154,9 +167,9 @@
 
 -(DrivingDirection) currentDrivingDirection {
     
-    if(self.vehicleSteeringAngel > 0.25) {
+    if(self.vehicleSteeringAngel > 0.1) {
         return DrivingDirectionLeft;
-    } else if(self.vehicleSteeringAngel < -0.25) {
+    } else if(self.vehicleSteeringAngel < -0.1) {
         return DrivingDirectionRight;
     }
     

@@ -62,6 +62,10 @@
         
         NSLog(@"Received Values: x: %f, y: %f, z: %f, dist: %f",x_val, y_val, z_val, dist);
         
+        if(dist < 1000) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"WallWarning" object:nil];
+        }
+        
     } else {
         NSLog(@"Fehlerhafter Datensatz: %@", receivedString);
     }
