@@ -50,9 +50,9 @@
 -(void)viewWillAppear:(BOOL)animated {
     
     
-    GameScene* gameScene = [[GameScene alloc] initWithSize:self.skview.frame.size];
+    self.gameScene = [[GameScene alloc] initWithSize:self.skview.frame.size];
     
-    [self.skview presentScene: gameScene];
+    [self.skview presentScene: self.gameScene];
     
     self.gameCharacter.layer.magnificationFilter = kCAFilterNearest;
     
@@ -68,18 +68,17 @@
     [_soundManager playAudio:[[NSBundle mainBundle] pathForResource:@"driving" ofType:@"mp3"] withName:@"driving" inLine:@"driving" withVolume:1 andRepeatCount:-1 fadeDuration:0 withCompletitionHandler:nil];
 
     
-    
     [NSTimer scheduledTimerWithTimeInterval:animationLength repeats:YES block:^(NSTimer * _Nonnull timer) {
         AMGSoundManager* soundManager = [AMGSoundManager sharedManager];
         
         if([self currentDrivingDirection] == DrivingDirectionLeft) {
-            [gameScene moveLeft];
+            [self.gameScene moveLeft];
             self.gameCharacter.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@_left",self.driverName]];
             [self.mapScene steerWithSteeringAnghel:self.vehicleSteeringAngel];
             [self.mapScene moveForwardWithSpeed:self.vehicleSpeed / 1.5];
             
         } else if([self currentDrivingDirection] == DrivingDirectionRight) {
-            [gameScene moveRight];
+            [self.gameScene moveRight];
             self.gameCharacter.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@_right",self.driverName]];
             [self.mapScene steerWithSteeringAnghel:self.vehicleSteeringAngel];
             [self.mapScene moveForwardWithSpeed: self.vehicleSpeed / 1.5];
@@ -88,7 +87,7 @@
             self.gameCharacter.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@_back",self.driverName]];
             [self.mapScene moveForwardWithSpeed:self.vehicleSpeed];
         }
-                
+        
         if ([self currentDrivingDirection] != DrivingDirectionForward && ![soundManager isAudioPlayingInLine:@"drifting"] && [self currentDrivingDirection] != self.lastDrivingDirection) {
             [soundManager playAudio:[[NSBundle mainBundle] pathForResource:@"drifting" ofType:@"mp3"] withName:@"right" inLine:@"drifting" withVolume:1 andRepeatCount:0 fadeDuration:0 withCompletitionHandler:nil];
             [soundManager setVolume:0.3 forLine:@"driving" withFadeDuration:1];
@@ -98,11 +97,10 @@
         }
         self.lastDrivingDirection = [self currentDrivingDirection];
     }];
-    
 
+    
     
 }
-
 
 -(DrivingDirection) currentDrivingDirection {
     

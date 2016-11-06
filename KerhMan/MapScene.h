@@ -11,6 +11,7 @@
 @interface MapScene : SCNScene {
     SCNFloor* floor;
     SCNSphere* sphere;
+    UIImage* floorImage;
 }
 
 @property SCNNode* cameraNode;

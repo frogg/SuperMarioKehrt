@@ -32,7 +32,8 @@
         floor = [SCNFloor floor];
         //floor.reflectionFalloffEnd = 10;
         //floor.reflectivity = 1.f;
-        floor.firstMaterial.diffuse.contents = [UIImage imageNamed:@"map_1"];
+        floorImage = [UIImage imageNamed:@"map_1"];
+        floor.firstMaterial.diffuse.contents = floorImage;
         floor.firstMaterial.diffuse.minificationFilter = SCNFilterModeNearest;
         floor.firstMaterial.diffuse.magnificationFilter = SCNFilterModeNearest;
         
@@ -66,7 +67,59 @@
     
     SCNAction* move = [SCNAction moveByX:xMovement y:0 z:yMovement duration:0.5];
     [self.cameraNode runAction:move];
+    [self currentPositionWithYMovement:yMovement xMovement:xMovement];
+    
 }
 
+- (void) currentPositionWithYMovement:(double) yMovement  xMovement: (double) xMovement {
+
+    CGPoint currentPoint = CGPointMake(
+                                       (self.cameraNode.position.x + xMovement * 6) * (floorImage.size.width / 100),
+                                       (self.cameraNode.position.z + yMovement * 6 + 100) * (floorImage.size.height / 100)
+                                       );
+    int x = ((int) currentPoint.x % (int) floorImage.size.height + (int) floorImage.size.height) % (int) floorImage.size.height;
+    int y = ((int) currentPoint.y % (int) floorImage.size.width + (int) floorImage.size.width) % (int) floorImage.size.height;
+    
+    
+    UIGraphicsBeginImageContext(floorImage.size);
+    [floorImage drawInRect:CGRectMake(0, 0, floorImage.size.width, floorImage.size.height)];
+    UIBezierPath* path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(currentPoint.x, currentPoint.y, 10, 10)];
+    [[UIColor redColor] setFill];
+    [path fill];
+    UIImage* image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    UIColor* color = [self colorInPixel:floorImage xCoordinate:x yCoordinate:y];
+    CGFloat red, green, blue;
+    [color getRed:&red green:&green blue:&blue alpha:nil];
+    CGFloat minColor = MIN(MIN(red, green), blue) * 255;
+    CGFloat maxColor = MAX(MAX(red, green), blue) * 255;
+
+    if (minColor > 50 && maxColor < 200 && (maxColor - minColor) < 50) {
+        NSLog(@"Is street");
+    } else {
+        NSLog(@"Isn't street");
+
+    }
+    
+}
+
+- (UIColor* )colorInPixel:(UIImage *)image xCoordinate:(int)x yCoordinate:(int)y {
+    
+    CFDataRef pixelData = CGDataProviderCopyData(CGImageGetDataProvider(image.CGImage));
+    const UInt8* data = CFDataGetBytePtr(pixelData);
+    
+    int pixelInfo = ((image.size.width  * y) + x - 1) * 4; // The image is png
+    
+    UInt8 red = data[pixelInfo];         // If you need this info, enable it
+    UInt8 green = data[(pixelInfo + 1)]; // If you need this info, enable it
+    UInt8 blue = data[pixelInfo + 2];    // If you need this info, enable it
+    UInt8 alpha = data[pixelInfo + 3];     // I need only this info for my maze game
+    CFRelease(pixelData);
+    NSLog(@"rgb %hhun %hhun %hhun", red, green, blue);
+
+    return [UIColor colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:alpha/255.0f]; // The pixel color info
+    
+}
 
 @end
