@@ -39,6 +39,7 @@ typedef enum {
 @property GameScene* gameScene;
 @property (strong, nonatomic) IBOutlet UIView *colorView;
 @property (strong, nonatomic) IBOutlet UILabel *wallWarningLabel;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 
 
 @end

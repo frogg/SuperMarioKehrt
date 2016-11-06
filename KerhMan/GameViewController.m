@@ -30,7 +30,7 @@
     self.vehicleSpeed = 0;
     
     AMGSoundManager* soundManager = [AMGSoundManager sharedManager];
-    [soundManager playAudio:[[NSBundle mainBundle] pathForResource:@"driving-theme" ofType:@"mp3"] withName:@"driving-theme" inLine:@"music" withVolume:1 andRepeatCount:0 fadeDuration:0 withCompletitionHandler:nil];
+    [soundManager playAudio:[[NSBundle mainBundle] pathForResource:@"driving-theme" ofType:@"mp3"] withName:@"driving-theme" inLine:@"music" withVolume:0.8 andRepeatCount:-1 fadeDuration:0 withCompletitionHandler:nil];
     
     self.ampelmaennchen.layer.magnificationFilter = kCAFilterNearest;
     [self startAmpelmaennchen];
@@ -107,7 +107,7 @@
     
     
     AMGSoundManager* _soundManager = [AMGSoundManager sharedManager];
-    [_soundManager playAudio:[[NSBundle mainBundle] pathForResource:@"driving" ofType:@"mp3"] withName:@"driving" inLine:@"driving" withVolume:1 andRepeatCount:-1 fadeDuration:0 withCompletitionHandler:nil];
+    [_soundManager playAudio:[[NSBundle mainBundle] pathForResource:@"driving" ofType:@"mp3"] withName:@"driving" inLine:@"driving" withVolume:0.5 andRepeatCount:-1 fadeDuration:0 withCompletitionHandler:nil];
     
     
     [NSTimer scheduledTimerWithTimeInterval:animationLength repeats:YES block:^(NSTimer * _Nonnull timer) {
@@ -134,30 +134,54 @@
         AMGSoundManager* soundManager = [AMGSoundManager sharedManager];
         
         if([self currentDrivingDirection] == DrivingDirectionLeft) {
-            [self.gameScene moveLeft];
+            
             self.gameCharacter.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@_left",self.driverName]];
-            [self.mapScene steerWithSteeringAnghel:self.vehicleSteeringAngel];
-            [self.mapScene moveForwardWithSpeed:self.vehicleSpeed / 1.5];
+            
+            
+            
+            if(self.vehicleSpeed != 0) {
+                [self.gameScene moveLeft];
+                [self.mapScene steerWithSteeringAnghel:self.vehicleSteeringAngel];
+                [self.mapScene moveForwardWithSpeed:self.vehicleSpeed / 1.5];
+            }
+            
+            
             
         } else if([self currentDrivingDirection] == DrivingDirectionRight) {
-            [self.gameScene moveRight];
+            
             self.gameCharacter.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@_right",self.driverName]];
-            [self.mapScene steerWithSteeringAnghel:self.vehicleSteeringAngel];
-            [self.mapScene moveForwardWithSpeed: self.vehicleSpeed / 1.5];
+            
+            
+            if(self.vehicleSpeed != 0) {
+                [self.gameScene moveRight];
+                [self.mapScene steerWithSteeringAnghel:self.vehicleSteeringAngel];
+                [self.mapScene moveForwardWithSpeed:self.vehicleSpeed / 1.5];
+            }
+            
             
         } else if([self currentDrivingDirection] == DrivingDirectionForward) {
             self.gameCharacter.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@_back",self.driverName]];
+            
+            
             [self.mapScene steerWithSteeringAnghel:self.vehicleSteeringAngel];
             [self.mapScene moveForwardWithSpeed:self.vehicleSpeed];
         }
         
         if ([self currentDrivingDirection] != DrivingDirectionForward && ![soundManager isAudioPlayingInLine:@"drifting"] && [self currentDrivingDirection] != self.lastDrivingDirection) {
             [soundManager playAudio:[[NSBundle mainBundle] pathForResource:@"drifting" ofType:@"mp3"] withName:@"right" inLine:@"drifting" withVolume:1 andRepeatCount:0 fadeDuration:0 withCompletitionHandler:nil];
-            [soundManager setVolume:0.3 forLine:@"driving" withFadeDuration:1];
+            [soundManager setVolume:0.5 forLine:@"driving" withFadeDuration:1];
             [NSTimer scheduledTimerWithTimeInterval:2 repeats:NO block:^(NSTimer * _Nonnull timer) {
-                [soundManager setVolume:1 forLine:@"driving" withFadeDuration:1];
+                [soundManager setVolume:0.5 forLine:@"driving" withFadeDuration:1];
             }];
         }
+        
+        
+        if(self.vehicleSpeed <= 0) {
+            [soundManager pauseAudiosInLine:@"driving"];
+        } else if(![soundManager isAudioPlayingInLine:@"driving"]) {
+            [soundManager resumeAudiosInLine:@"driving"];
+        }
+        
         self.lastDrivingDirection = [self currentDrivingDirection];
     }];
     
@@ -220,10 +244,13 @@
 
 -(void)speedChangeTo:(double)to of:(Kehrmaschine *)kehrmaschine {
     self.vehicleSpeed = to;
+    self.statusLabel.text = [NSString stringWithFormat:@"Speed %.2f - Steerin %.2f", self.vehicleSpeed * 100, self.vehicleSteeringAngel * 100];
 }
 
 -(void)steeringAngleChangedTo:(double)to of:(Kehrmaschine *)kehrmaschine {
     self.vehicleSteeringAngel = to;
+    self.statusLabel.text = [NSString stringWithFormat:@"Speed %.2f - Steerin %.2f", self.vehicleSpeed * 100, self.vehicleSteeringAngel * 100];
+
 }
 
 

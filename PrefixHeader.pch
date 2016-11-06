@@ -10,7 +10,7 @@
 #define PrefixHeader_pch
 
 
-#define gameSpeed 9
+#define gameSpeed 3
 #define animationLength 0.1
 #define useMachineInput false
 

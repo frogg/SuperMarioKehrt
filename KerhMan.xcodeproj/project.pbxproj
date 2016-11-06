@@ -23,7 +23,7 @@
 		7F52C8031DCE2B3D001DB3A3 /* AMGAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F52C8001DCE2B3D001DB3A3 /* AMGAudioPlayer.m */; };
 		7F52C8041DCE2B3D001DB3A3 /* AMGSoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F52C8021DCE2B3D001DB3A3 /* AMGSoundManager.m */; };
 		7F52C8131DCE7041001DB3A3 /* driving.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7F52C8121DCE7041001DB3A3 /* driving.mp3 */; };
-		7F52C8191DCE7706001DB3A3 /* drifting.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7F52C8181DCE7706001DB3A3 /* drifting.mp3 */; };
+		7F658D881DCF3BE2004471F7 /* drifting.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7F52C8181DCE7706001DB3A3 /* drifting.mp3 */; };
 		7F65F7C01DCD3993000F96D8 /* NMSSH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F65F7BF1DCD3993000F96D8 /* NMSSH.framework */; };
 		7FCB64921DCDC3FD006812B0 /* Kehrmaschine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCB64911DCDC3FD006812B0 /* Kehrmaschine.swift */; };
 /* End PBXBuildFile section */
@@ -213,6 +213,7 @@
 				514CEB391DCE921E00080A2D /* driving-theme.mp3 in Resources */,
 				5162D1F21DCD24D300EC08D5 /* Assets.xcassets in Resources */,
 				5162D1F51DCD24D300EC08D5 /* LaunchScreen.storyboard in Resources */,
+				7F658D881DCF3BE2004471F7 /* drifting.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
